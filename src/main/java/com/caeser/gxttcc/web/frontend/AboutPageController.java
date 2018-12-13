@@ -57,4 +57,46 @@ public class AboutPageController {
 		}
 		return modelMap;
 	}
+	@RequestMapping(value="/gethonorlist",method=RequestMethod.GET)
+	@ResponseBody
+	private Map<String,Object> getHonorList(HttpServletRequest request){
+		Map<String,Object> modelMap=new HashMap<String,Object>();
+		List<Honor> honorList=honorDao.queryHonorAll();
+		if(honorList==null) {
+			modelMap.put("success", false);
+			modelMap.put("errMsg", "getaboutall error");
+		}else {
+			
+			modelMap.put("honorList", honorList);
+		}
+		return modelMap;
+	}
+	@RequestMapping(value="/getteamlist",method=RequestMethod.GET)
+	@ResponseBody
+	private Map<String,Object> getTeamList(HttpServletRequest request){
+		Map<String,Object> modelMap=new HashMap<String,Object>();
+		List<Team> teamList=teamDao.queryTeam();
+		if(teamList==null) {
+			modelMap.put("success", false);
+			modelMap.put("errMsg", "getaboutall error");
+		}else {
+			
+			modelMap.put("teamList", teamList);
+		}
+		return modelMap;
+	}
+	@RequestMapping(value="/getculture",method=RequestMethod.GET)
+	@ResponseBody
+	private Map<String,Object> getCulture(HttpServletRequest request){
+		Map<String,Object> modelMap=new HashMap<String,Object>();
+		Culture culture=cultureDao.queryCulture();
+		if(culture==null) {
+			modelMap.put("success", false);
+			modelMap.put("errMsg", "getaboutall error");
+		}else {
+			
+			modelMap.put("culture", culture);
+		}
+		return modelMap;
+	}
 }
