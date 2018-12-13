@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.caeser.gxttcc.dao.ProjectsDao">
+	<select id="queryIndexTabImgById" resultType="com.caeser.gxttcc.entity.Projects">
+		SELECT  aab109
+		FROM ab01
+		WHERE
+		aab101=#{id}
+	</select>
+	<select id="queryIndexTabContentByType" resultType="com.caeser.gxttcc.entity.Projects">
+		SELECT  aab101,aab101,aab102,aab112,aab114
+		FROM ab01
+		WHERE
+		aab113=#{type}
+		LIMIT 7
+	</select>
+</mapper>
+    

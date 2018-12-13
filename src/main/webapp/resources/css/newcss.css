@@ -1,0 +1,56 @@
+.hd-nav{
+	background-color: #27278B;
+	margin-bottom: 20px;
+}
+.cm-title em{
+	color: #2929A5;
+}
+.am-active a{
+	background-color: #27278B;
+}
+.am-nav-tabs > li.am-active > a{
+	background-color: #27278B;
+	color: #27278B;
+}
+.am-nav-tabs > li.am-active > a {
+  border: 0;
+  background: #27278B !important;
+  color: #fff !important;
+}
+.index-new-about li em i{
+	color: #27278B;
+}
+.cm-type li.on {
+  background: #27278B;
+}
+.am-u-lg-7{
+	width: 400px;
+}
+.index-new-tab-img{
+	width: 280px;
+}
+.am-u-lg-3 a img{
+	width: 340px;
+	height: 250px;
+}
+.am-u-ctt{
+	float: left;
+}
+.cm-content img{
+	width: 751px;
+	height: 500px;
+}
+.am-slides li a img{
+	width: 188px;
+	height: 130px;
+}
+.index-new-tab-img a img{
+	width: 280px;
+	height: 190px;
+}
+.cm-ct-map1{
+	background: transparent url(http://api0.map.bdimg.com/images/blank.gif);
+}
+#admin-title{
+	text-align: right;
+}

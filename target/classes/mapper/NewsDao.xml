@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.caeser.gxttcc.dao.NewsDao">
+	<select id="queryIndexBottomItems" resultType="com.caeser.gxttcc.entity.News">
+		SELECT  aac101,aac102,aac103,aac104,aac105,aac109,aac110,aac111,aac112,aac113,aac115
+		FROM ac01
+		WHERE
+		aac113=#{type} AND
+		aac114!=0
+		LIMIT 7
+	</select>
+	
+</mapper>
+    

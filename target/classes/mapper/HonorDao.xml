@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.caeser.gxttcc.dao.HonorDao">
+	<select id="queryHonor" resultType="com.caeser.gxttcc.entity.Honor">
+		SELECT  aaa501,aaa502,aaa503,aaa504,aaa505,aaa506
+		FROM aa05
+		LIMIT 5
+	</select>
+	<select id="queryHonorAll" resultType="com.caeser.gxttcc.entity.Honor">
+		SELECT  aaa501,aaa502,aaa503,aaa504,aaa505,aaa506
+		FROM aa05
+	</select>
+</mapper>

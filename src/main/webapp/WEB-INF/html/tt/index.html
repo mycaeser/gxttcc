@@ -1,0 +1,455 @@
+﻿<!--   <?php 
+    require('conndb.php');
+    $sql="select aaa102 from aa01 where aaa101=1";//
+    $result=mysqli_query($link,$sql);//执行sql语句
+    if ($result instanceof mysqli_result) { 
+        while ( $row = $result->fetch_object() ) {  
+            $company_content= $row->aaa102;  
+        } 
+    }
+
+?>
+ -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<link rel="shortcut icon" href="favicon.ico" />
+<title>广西泰通通信发展有限公司</title> ﻿
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<link rel="stylesheet" href="../resources/css/default.min.css?t=227" />
+<link rel="stylesheet" type="text/css" href=../resources/css/newcss.css />
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script type="text/javascript"
+	src="../resources/lib/jquery/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="lib/amazeui/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script type="text/javascript"
+	src="../resources/lib/handlebars/handlebars.min.js"></script>
+<script type="text/javascript"
+	src="../resources/lib/iscroll/iscroll-probe.js"></script>
+<script type="text/javascript"
+	src="../resources/lib/amazeui/amazeui.min.js"></script>
+<script type="text/javascript"
+	src="../resources/lib/raty/jquery.raty.js"></script>
+<script type="text/javascript" src="../resources/js/main.min.js?t=1"></script>
+<script type="text/javascript" src="../resources/js/ttindex.js"></script>
+
+<!-- <style type="text/css">
+    .cm-tcontent{
+        width: 40%;
+        float: left;
+    }
+</style> -->
+</head>
+<body>
+	<header class="hd">
+		<div class="am-slider am-slider-default"
+			data-am-flexslider="{playAfterPaused: 8000}">
+			<ul class="am-slides">
+				<li><img src="../resources/images/lunbo.jpg" /></li>
+				<li><img src="../resources/images/lunbo2.png" /></li>
+				<li><img src="../resources/images/lunbo3.png" /></li>
+			</ul>
+		</div>
+		<div class="cml-g" style="position: absolute; left: 0; top: 30px;">
+			<div class="hd-left">
+				<div class="hd-logo">
+					<a href="#"> <img src="../resources/images/logo.png"
+						style="width: 210px; height: 80px;" />
+					</a>
+				</div>
+
+			</div>
+	</header>
+
+	<div class="hd-nav">
+		<button class="am-show-sm-only am-collapsed"
+			data-am-collapse="{target: '.hd-navul'}">&#xe68b;</button>
+		<nav style="font-size: 20px;">
+			<ul class="hd-navul am-collapse" style="height: 0px;">
+				<li class="on"><a href="index.php">首页</a></li>
+				<li><a href="about.php?am01=am01">关于我们</a></li>
+				<li><a href="newslist.php?bm01=1">新闻资讯</a></li>
+				<li><a href="projects.php?cm01=1&cm03=1">工程案例</a></li>
+				<li><a href="projects.php?cm01=2">人力资源</a>
+				<li><a href="joinus.html">联系我们</a>
+			</ul>
+		</nav>
+	</div>
+	<div class="am-cf"></div>
+	<div class="index-new">
+		<div class="cml-g">
+			<div class="am-u-sm-12 am-u-md-4 am-u-lg-4">
+				<div class="index-new-left">
+					<div class="cm-title">
+						<em>企业简介</em><a href="about.php?am01=am01">更多<i class="font">&#xe61b;</i></a>
+					</div>
+					<div class="index-new-about">
+						<h1>
+							<!--  <?php echo $company_content ?> -->
+						</h1>
+						<ul>
+							<li><a href="about.php?am02=am02"> <em><i
+										class="font">&#xe613;</i></em> <span>企业文化</span>
+							</a></li>
+							<li><a href="about.php?am03=am03&am031=1"> <em><i
+										class="font">&#xe623;</i></em> <span>管理团队</span>
+							</a></li>
+							<li><a href="about.php?am04=am04&am041=1"> <em><i
+										class="font">&#xe6ea;</i></em> <span>荣誉资质</span>
+							</a></li>
+							<li><a href="about.php?am05=am05"> <em><i
+										class="font">&#xe63c;</i></em> <span>组织架构</span>
+							</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="am-u-sm-12 am-u-md-8 am-u-lg-8">
+				<div class="index-new-right">
+					<div class="cm-title">
+						<em>企业相关</em><a href="about.php?am01=am01">更多<i class="font">&#xe61b;</i></a>
+					</div>
+					<div class="index-new-tab">
+						<div class="am-tabs" data-am-tabs="{noSwipe: 1}"
+							id="doc-tab-demo-1">
+
+							<ul class="am-tabs-nav am-nav am-nav-tabs">
+								<li class="am-active"><a href="javascript: void(0)">公司动态</a></li>
+								<li><a href="javascript: void(0)">行业新闻</a></li>
+								<li><a href="javascript: void(0)">通信知识</a></li>
+								<li><a href="javascript: void(0)">企业公告</a></li>
+							</ul>
+							<div class="am-tabs-bd">
+								<div class="am-tab-panel am-active">
+									<div class="index-new-tab-main">
+										<div class="am-u-sm-4 am-u-md-4 am-u-lg-5">
+											<div class="index-new-tab-img int1">
+												<!--  <?php
+                                                    $sql="select * from ab01 where aab101=1;";
+                                                    $result=mysqli_query($link,$sql);//执行sql语句
+                                                    if ($result instanceof mysqli_result)
+                                                    {
+                                                        while ( $row = $result->fetch_object() ) 
+                                                        {
+                                                            $itabimg01=$row->aab109;
+                                                            echo "<a href=\"#\"><img src=\"$itabimg01\" /></a>";
+                                                        }
+                                                    }
+                                                ?>
+                                                 -->
+											</div>
+										</div>
+										<div class="am-u-sm-4 am-u-md-4 am-u-lg-7">
+											<div class="index-new-tab-list int11">
+												<ul>
+
+													<!--    <?php
+                                                        $sql="select * from ab01 where aab113=1;";
+                                                        $result=mysqli_query($link,$sql);//执行sql语句
+                                                        if ($result instanceof mysqli_result)
+                                                        {
+                                                            while ( $row = $result->fetch_object() )
+                                                            {
+                                                                $newtabct04=$row->aab114;//是否显示
+                                                                if($newtabct04==1)
+                                                                {
+                                                                    $newtabct01=$row->aab101;//编号
+                                                                    $newtabct02=$row->aab102;//标题
+                                                                    $newtabct03=$row->aab112;//日期
+                                                                    echo "<li><a href=\"newslist.php?bm01=1&bm02=$newtabct01\"><div class=\"am-u-sm-8 am-u-md-8 am-u-lg-8\"><strong class=\"f-toe\">$newtabct02</strong></div><div class=\"am-u-sm-4 am-u-md-4 am-u-lg-4\"><span>[$newtabct03]</span></div></a></li>";
+                                                                }                     
+                                                            }
+                                                        }
+                                                    ?>
+                                                    -->
+												</ul>
+
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="am-tab-panel">
+									<div class="index-new-tab-main">
+										<div class="am-u-sm-4 am-u-md-4 am-u-lg-5">
+											<div class="index-new-tab-img int2">
+												<!--   <?php
+                                                    $sql="select * from ab01 where aab101=2;";
+                                                    $result=mysqli_query($link,$sql);//执行sql语句
+                                                    if ($result instanceof mysqli_result)
+                                                    {
+                                                        while ( $row = $result->fetch_object() ) 
+                                                        {
+                                                            $itabimg01=$row->aab109;
+                                                            echo "<a href=\"#\"><img src=\"$itabimg01\" /></a>";
+                                                        }
+                                                    }
+                                                ?>
+                                                -->
+											</div>
+										</div>
+										<div class="am-u-sm-4 am-u-md-4 am-u-lg-7">
+											<div class="index-new-tab-list int21">
+												<ul>
+													<!--   <?php
+                                                        $sql="select * from ab01 where aab113=2;";
+                                                        $result=mysqli_query($link,$sql);//执行sql语句
+                                                        if ($result instanceof mysqli_result)
+                                                        {
+                                                            while ( $row = $result->fetch_object() )
+                                                            {
+                                                                $newtabct04=$row->aab114;//是否显示
+                                                                if($newtabct04==1)
+                                                                {
+                                                                    $newtabct01=$row->aab101;//编号
+                                                                    $newtabct02=$row->aab102;//标题
+                                                                    $newtabct03=$row->aab112;//日期
+                                                                    echo "<li><a href=\"newslist.php?bm01=2&bm02=$newtabct01\"><div class=\"am-u-sm-8 am-u-md-8 am-u-lg-8\"><strong class=\"f-toe\">$newtabct02</strong></div><div class=\"am-u-sm-4 am-u-md-4 am-u-lg-4\"><span>[$newtabct03]</span></div></a></li>";
+                                                                }
+                                                                
+                                                            }
+                                                        }
+                                                    ?>
+                                                     -->
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="am-tab-panel">
+									<div class="index-new-tab-main">
+										<div class="am-u-sm-4 am-u-md-4 am-u-lg-5">
+											<div class="index-new-tab-img int3">
+												<!--    <?php
+                                                    $sql="select * from ab01 where aab101=3;";
+                                                    $result=mysqli_query($link,$sql);//执行sql语句
+                                                    if ($result instanceof mysqli_result)
+                                                    {
+                                                        while ( $row = $result->fetch_object() ) 
+                                                        {
+                                                            $itabimg01=$row->aab109;
+                                                            echo "<a href=\"#\"><img src=\"$itabimg01\" /></a>";
+                                                        }
+                                                    }
+                                                ?>
+                                                 -->
+											</div>
+										</div>
+										<div class="am-u-sm-4 am-u-md-4 am-u-lg-7">
+											<div class="index-new-tab-list int31">
+												<ul>
+													<!--      <?php
+                                                        $sql="select * from ab01 where aab113=3;";
+                                                        $result=mysqli_query($link,$sql);//执行sql语句
+                                                        if ($result instanceof mysqli_result)
+                                                        {
+                                                            while ( $row = $result->fetch_object() )
+                                                            {
+                                                                $newtabct04=$row->aab114;//是否显示
+                                                                if($newtabct04==1)
+                                                                {
+                                                                    $newtabct01=$row->aab101;//编号
+                                                                    $newtabct02=$row->aab102;//标题
+                                                                    $newtabct03=$row->aab112;//日期
+                                                                    echo "<li><a href=\"newslist.php?bm01=3&bm02=$newtabct01\"><div class=\"am-u-sm-8 am-u-md-8 am-u-lg-8\"><strong class=\"f-toe\">$newtabct02</strong></div><div class=\"am-u-sm-4 am-u-md-4 am-u-lg-4\"><span>[$newtabct03]</span></div></a></li>";
+                                                                }
+                                                                
+                                                            }
+                                                        }
+                                                    ?>
+                                                     -->
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="am-tab-panel">
+									<div class="index-new-tab-main">
+										<div class="am-u-sm-4 am-u-md-4 am-u-lg-5">
+											<div class="index-new-tab-img int4">
+												<!--   <?php
+                                                    $sql="select * from ab01 where aab101=4;";
+                                                    $result=mysqli_query($link,$sql);//执行sql语句
+                                                    if ($result instanceof mysqli_result)
+                                                    {
+                                                        while ( $row = $result->fetch_object() ) 
+                                                        {
+                                                            $itabimg01=$row->aab109;
+                                                            echo "<a href=\"#\"><img src=\"$itabimg01\" /></a>";
+                                                        }
+                                                    }
+                                                ?>
+                                                 -->
+											</div>
+										</div>
+										<div class="am-u-sm-4 am-u-md-4 am-u-lg-7">
+											<div class="index-new-tab-list int41">
+												<ul>
+													<!--  <?php
+                                                        $sql="select * from ab01 where aab113=4;";
+                                                        $result=mysqli_query($link,$sql);//执行sql语句
+                                                        if ($result instanceof mysqli_result)
+                                                        {
+                                                            while ( $row = $result->fetch_object() )
+                                                            {
+                                                                $newtabct04=$row->aab114;//是否显示
+                                                                if($newtabct04==1)
+                                                                {
+                                                                    $newtabct01=$row->aab101;//编号
+                                                                    $newtabct02=$row->aab102;//标题
+                                                                    $newtabct03=$row->aab112;//日期
+                                                                    echo "<li><a href=\"newslist.php?bm01=4&bm02=$newtabct01\"><div class=\"am-u-sm-8 am-u-md-8 am-u-lg-8\"><strong class=\"f-toe\">$newtabct02</strong></div><div class=\"am-u-sm-4 am-u-md-4 am-u-lg-4\"><span>[$newtabct03]</span></div></a></li>";
+                                                                }
+                                                                
+                                                            }
+                                                        }
+                                                    ?>
+                                                    -->
+
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="index-honor">
+		<div class="cml-g">
+			<div class="cm-title">
+				<em>荣誉资质</em><a href="about.php?am04=am04&am041=1">更多<i
+					class="font">&#xe61b;</i></a>
+			</div>
+			<div class="index-honor-silder">
+				<div class="am-slider am-slider-default am-slider-carousel honortt"
+					data-am-flexslider="{itemWidth: 200, itemMargin: 5, slideshow: false}">
+					<ul class="am-slides">
+					 <li></li>
+					<!--   <?php
+                            $sql="select * from aa05";
+                            $result=mysqli_query($link,$sql);//执行sql语句
+                            if ($result instanceof mysqli_result)
+                            {
+                                while ( $row = $result->fetch_object() ) 
+                                {
+                                    $honor_01=$row->aaa502;//标题
+                                    $honor_02=$row->aaa503;//图片路径
+                                    $honor_03=$row->aaa501;//编号
+                                    echo "<li><a href=\"about.php?am04=am04&am042=$honor_03\"><img src=\"$honor_02\" /><span class=\"f-toe\">$honor_01</span></a></li>";
+                                }
+                            }
+                        ?>
+                        -->
+				</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="index-product">
+		<div class="cml-g">
+			<div class="cm-title">
+				<em>案例细读</em><a href="projects.php?cm01=1">更多<i class="font">&#xe61b;</i></a>
+			</div>
+			<div class="index-new-tab-list" id="botta">
+				<ul>
+					<!--   <?php
+                    $sql="select * from ac01 where aac113=1;";
+                    $result=mysqli_query($link,$sql);//执行sql语句
+                    if ($result instanceof mysqli_result)
+                    {
+                        $cnu=0;
+                        while ( $row = $result->fetch_object() )
+                        {
+                            $pjtarticle04=$row->aac114;//是否显示
+                            if($pjtarticle04==1)
+                            {
+                                if($cnu==7)
+                                    break;
+                                $pjtarticle01=$row->aac101;//编号
+                                $pjtarticle02=$row->aac102;//标题
+                                $pjtarticle03=$row->aac112;//日期
+                                echo "<li><a href=\"projects.php?cm01=1&cm02=$pjtarticle01\"><div class=\"am-u-sm-8 am-u-md-8 am-u-lg-8\"><strong class=\"f-toe\">$pjtarticle02</strong></div><div class=\"am-u-sm-4 am-u-md-4 am-u-lg-4\"><span>［$pjtarticle03]</span></div></a></li>";
+                                $cnu++;
+                            }
+                            
+                        }
+                    }
+                ?>
+                -->
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="index-product">
+		<div class="cml-g">
+			<div class="cm-title">
+				<em>阅读精选</em><a href="projects.php?cm01=2">更多<i class="font">&#xe61b;</i></a>
+			</div>
+			<div class="index-new-tab-list" id="bottb">
+				<ul>
+					<!--  <?php
+                    $sql="select * from ac01 where aac113=2;";
+                    $result=mysqli_query($link,$sql);//执行sql语句
+                    if ($result instanceof mysqli_result)
+                    {
+                        while ( $row = $result->fetch_object() )
+                        {
+                            $pjtarticle04=$row->aac114;//是否显示
+                            if($pjtarticle04==1)
+                            {
+                                $pjtarticle01=$row->aac101;//编号
+                                $pjtarticle02=$row->aac102;//标题
+                                $pjtarticle03=$row->aac112;//日期
+                                echo "<li><a href=\"projects.php?cm01=2&cm02=$pjtarticle01\"><div class=\"am-u-sm-8 am-u-md-8 am-u-lg-8\"><strong class=\"f-toe\">$pjtarticle02</strong></div><div class=\"am-u-sm-4 am-u-md-4 am-u-lg-4\"><span>［$pjtarticle03]</span></div></a></li>";
+                            }
+                            
+                        }
+                    }
+                ?>
+                -->
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- -->
+	</div>
+	﻿
+	<footer class="footer">
+		<div class="cml-g">
+			<h2>
+				<span>广西泰通通信发展有限公司</span> <span>桂ICP备17006000号</span>
+			</h2>
+			<h3>
+				<span>柳州地址:柳州市柳南区柳太路1号颐华城14栋1单元12层</span> <span>邮编:4335100</span> <span>电话:0772-3211777</span>
+			</h3>
+			<h3>
+				<span>南宁地址:南宁市滨湖路1-3号金湖苑B座8单元616号</span> <span>邮编:4335100</span> <span>电话:0771-5608816</span>
+
+			</h3>
+			<h3>
+				<span>联系邮箱：lzdgdq@163.com</span>
+			</h3>
+		</div>
+	</footer>
+</body>
+</html>

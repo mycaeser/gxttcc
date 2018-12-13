@@ -1,0 +1,146 @@
+/**
+ * 
+ */
+$(function() {
+	//获得简介内容URL
+	var getBriefIntroductionUrl='/gxttcc/frontend/getbriefintroduction';
+	//获得主页tab四个图片URL
+	var getTabUrl='/gxttcc/frontend/getindextabimg?tabid=';
+	//获得主页tab四个标签内容标题、日期
+	var getTabContent='/gxttcc/frontend/getindextabcontent?type=';
+	var urlToresource='../resources/';
+	var getHonorUrl='/gxttcc/frontend/gethonor';
+	var getBottomUrl='/gxttcc/frontend/getbottoma?bottomaid=';
+	$.getJSON(getBriefIntroductionUrl,function(data){
+		var briefIntroduction=data.briefIntroduction;
+		$('.index-new-about').children('h1').html(briefIntroduction);
+	});
+	var urlToresource='../resources/';
+	var tabName='.int';
+	
+	$.getJSON(getTabUrl+1,function(data){
+		var imgUrl=data.tabUrl;
+		$('.int1').html('<img src="'+urlToresource+imgUrl+'" />');
+	});
+	$.getJSON(getTabUrl+2,function(data){
+		var imgUrl=data.tabUrl;
+		$('.int2').html('<img src="'+urlToresource+imgUrl+'" />');
+	});
+	$.getJSON(getTabUrl+3,function(data){
+		var imgUrl=data.tabUrl;
+		$('.int3').html('<img src="'+urlToresource+imgUrl+'" />');
+	});
+	$.getJSON(getTabUrl+4,function(data){
+		var imgUrl=data.tabUrl;
+		$('.int4').html('<img src="'+urlToresource+imgUrl+'" />');
+	});
+	var contentName=new Array('.int11','.int21','.int31','.int41');
+	$.getJSON(getTabContent+1,function(data){
+		var viewhtml='';
+		for(var i=0;i<data.projectsList.length;i++){
+			var typeid=data.projectsList[i].aab101;
+			var title=data.projectsList[i].aab102;
+			var datet=data.projectsList[i].aab112;
+			viewhtml=viewhtml+'<li><a href="'+
+				typeid
+				+'"><div class="am-u-sm-8 am-u-md-8 am-u-lg-8"><strong class="f-toe">'+
+				title
+				+'</strong></div><div class="am-u-sm-4 am-u-md-4 am-u-lg-4"><span>'+
+				datet
+				+'</span></div></a></li>';
+		}
+		$('.int11').children('ul').html(viewhtml);
+	});
+	$.getJSON(getTabContent+2,function(data){
+		var viewhtml='';
+		for(var i=0;i<data.projectsList.length;i++){
+			var typeid=data.projectsList[i].aab101;
+			var title=data.projectsList[i].aab102;
+			var datet=data.projectsList[i].aab112;
+			var ifview=data.projectsList[i].aab114;
+			if(ifview==0)
+				continue;
+			viewhtml=viewhtml+'<li><a href="'+
+				typeid
+				+'"><div class="am-u-sm-8 am-u-md-8 am-u-lg-8"><strong class="f-toe">'+
+				title
+				+'</strong></div><div class="am-u-sm-4 am-u-md-4 am-u-lg-4"><span>'+
+				datet
+				+'</span></div></a></li>';
+		}
+		$('.int21').children('ul').html(viewhtml);
+	});
+	$.getJSON(getTabContent+3,function(data){
+		var viewhtml='';
+		for(var i=0;i<data.projectsList.length;i++){
+			var typeid=data.projectsList[i].aab101;
+			var title=data.projectsList[i].aab102;
+			var datet=data.projectsList[i].aab112;
+			var ifview=data.projectsList[i].aab114;
+			if(ifview==0)
+				continue;
+			viewhtml=viewhtml+'<li><a href="'+
+				typeid
+				+'"><div class="am-u-sm-8 am-u-md-8 am-u-lg-8"><strong class="f-toe">'+
+				title
+				+'</strong></div><div class="am-u-sm-4 am-u-md-4 am-u-lg-4"><span>'+
+				datet
+				+'</span></div></a></li>';
+		}
+		$('.int31').children('ul').html(viewhtml);
+	});
+	$.getJSON(getTabContent+4,function(data){
+		var viewhtml='';
+		for(var i=0;i<data.projectsList.length;i++){
+			var typeid=data.projectsList[i].aab101;
+			var title=data.projectsList[i].aab102;
+			var datet=data.projectsList[i].aab112;
+			var ifview=data.projectsList[i].aab114;
+			if(ifview==0)
+				continue;
+			viewhtml=viewhtml+'<li><a href="'+
+				typeid
+				+'"><div class="am-u-sm-8 am-u-md-8 am-u-lg-8"><strong class="f-toe">'+
+				title
+				+'</strong></div><div class="am-u-sm-4 am-u-md-4 am-u-lg-4"><span>'+
+				datet
+				+'</span></div></a></li>';
+		}
+		$('.int41').children('ul').html(viewhtml);
+	});
+	$.getJSON(getHonorUrl,function(data){
+		var honorList=data.honorList;
+		var viewHTML='';
+		honorList.map(function(item,index){
+			if(item.aaa506!=0)
+				viewHTML+='<li data-thumb-alt="" style="width: 200px; margin-right: 5px; float: left; display: block;"><a href="#'+item.aaa501+'"><img src="'+urlToresource+item.aaa503+'" /><span class="f-toe">'+item.aaa502+'</span></a></li>';
+		});
+		$('.honortt').children('.am-viewport').children('ul').html(viewHTML);
+	});
+	$.getJSON(getBottomUrl+1,function(data){
+		var bottoma=data.newsList;
+		var viewHTML='';
+		bottoma.map(function(item,index){
+			viewHTML+='<li><a href="'+item.aac101
+			+'"><div class="am-u-sm-8 am-u-md-8 am-u-lg-8"><strong class="f-toe">'+
+			item.aac102
+			+'</strong></div><div class="am-u-sm-4 am-u-md-4 am-u-lg-4"><span>'+
+			item.aac112
+			+'</span></div></a></li>';
+		});
+		$('#botta').children('ul').html(viewHTML);
+	});
+	$.getJSON(getBottomUrl+2,function(data){
+		var bottoma=data.newsList;
+		var viewHTML='';
+		bottoma.map(function(item,index){
+			viewHTML+='<li><a href="'+item.aac101
+			+'"><div class="am-u-sm-8 am-u-md-8 am-u-lg-8"><strong class="f-toe">'+
+			item.aac102
+			+'</strong></div><div class="am-u-sm-4 am-u-md-4 am-u-lg-4"><span>'+
+			item.aac112
+			+'</span></div></a></li>';
+		});
+		$('#bottb').children('ul').html(viewHTML);
+	});
+})
