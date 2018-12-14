@@ -10,11 +10,17 @@
 		aab101=#{id}
 	</select>
 	<select id="queryIndexTabContentByType" resultType="com.caeser.gxttcc.entity.Projects">
-		SELECT  aab101,aab101,aab102,aab112,aab114
+		SELECT  aab101,aab102,aab112,aab114
 		FROM ab01
 		WHERE
 		aab113=#{type}
 		LIMIT 7
+	</select>
+	<select id="queryIndexTabContentByTypeA" resultType="com.caeser.gxttcc.entity.Projects">
+		SELECT  aab101,aab102,aab103,aab104,aab105,aab106,aab107,aab108,aab109,aab110,aab111,aab112,aab113,aab114
+		FROM ab01
+		WHERE
+		aab113=#{type}
 	</select>
 </mapper>
     

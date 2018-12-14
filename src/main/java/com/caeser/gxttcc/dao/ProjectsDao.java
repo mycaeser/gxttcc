@@ -16,4 +16,11 @@ public interface ProjectsDao {
 	 * @return
 	 */
 	List<Projects> queryIndexTabContentByType(int type);
+	
+	/**
+	 * 查询公司动态、行业新闻、通信知识、企业公告
+	 * @param type
+	 * @return
+	 */
+	List<Projects> queryIndexTabContentByTypeA(int type);
 }

@@ -15,7 +15,7 @@ public class HonorDaoTest extends BaseTest{
 	@Test
 	public void testQueryHonor() {
 		List<Honor> honorList=honorService.queryHonor();
-		//System.out.println(honorList.get(0).getAaa501());
+		System.out.println(honorList);
 	}
 	
 }

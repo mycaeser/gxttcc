@@ -3,20 +3,64 @@ package com.caeser.gxttcc.entity;
 public class Projects {
 	// 编号
 	private int Aab101;
-	// 工程案例标题
+	// 标题
 	private String Aab102;
+	// 第一段内容
+	private String Aab103;
+	// 第二段内容
+	private String Aab104;
+	// 第三段内容
+	private String Aab105;
+	// 是否显示第一段
+	private String Aab106;
+	// 是否显示第二段
+	private String Aab107;
+	// 是否显示第三段
+	private String Aab108;
+	// 第一张图片
+	private String Aab109;
+	// 第二张图片
+	private String Aab110;
+	// 第三张图片
+	private String Aab111;
 	// 日期
 	private String Aab112;
-	// 案例介绍 3段
-	private String Aab103;
-	private String Aab104;
-	private String Aab105;
-	// 案例图片
-	private String Aab109;
-	private String Aab110;
-	private String Aab111;
+	// 分类
+	private String Aab113;
 	// 是否显示
 	private boolean Aab114;
+
+	public String getAab106() {
+		return Aab106;
+	}
+
+	public void setAab106(String aab106) {
+		Aab106 = aab106;
+	}
+
+	public String getAab107() {
+		return Aab107;
+	}
+
+	public void setAab107(String aab107) {
+		Aab107 = aab107;
+	}
+
+	public String getAab108() {
+		return Aab108;
+	}
+
+	public void setAab108(String aab108) {
+		Aab108 = aab108;
+	}
+
+	public String getAab113() {
+		return Aab113;
+	}
+
+	public void setAab113(String aab113) {
+		Aab113 = aab113;
+	}
 
 	public boolean isAab114() {
 		return Aab114;
@@ -97,5 +141,4 @@ public class Projects {
 	public void setAab111(String aab111) {
 		Aab111 = aab111;
 	}
-
 }

@@ -10,4 +10,10 @@ public interface NewsDao {
 	 * @return
 	 */
 	List<News> queryIndexBottomItems(int type);
+	/**
+	 * 通过aac115查询工程案例
+	 * @param type
+	 * @return
+	 */
+	List<News> queryNewsByType(int type);
 }

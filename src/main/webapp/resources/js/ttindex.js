@@ -11,6 +11,8 @@ $(function() {
 	var urlToresource='../resources/';
 	var getHonorUrl='/gxttcc/frontend/gethonor';
 	var getBottomUrl='/gxttcc/frontend/getbottoma?bottomaid=';
+	//荣誉资质页面标志
+	var HONOR_PAGE_TAB=4;
 	$.getJSON(getBriefIntroductionUrl,function(data){
 		var briefIntroduction=data.briefIntroduction;
 		$('.index-new-about').children('h1').html(briefIntroduction);
@@ -41,7 +43,7 @@ $(function() {
 			var typeid=data.projectsList[i].aab101;
 			var title=data.projectsList[i].aab102;
 			var datet=data.projectsList[i].aab112;
-			viewhtml=viewhtml+'<li><a href="'+
+			viewhtml=viewhtml+'<li><a href="/gxttcc/newstt/index?a=1&b='+
 				typeid
 				+'"><div class="am-u-sm-8 am-u-md-8 am-u-lg-8"><strong class="f-toe">'+
 				title
@@ -60,7 +62,7 @@ $(function() {
 			var ifview=data.projectsList[i].aab114;
 			if(ifview==0)
 				continue;
-			viewhtml=viewhtml+'<li><a href="'+
+			viewhtml=viewhtml+'<li><a href="/gxttcc/newstt/index?a=2&b='+
 				typeid
 				+'"><div class="am-u-sm-8 am-u-md-8 am-u-lg-8"><strong class="f-toe">'+
 				title
@@ -79,7 +81,7 @@ $(function() {
 			var ifview=data.projectsList[i].aab114;
 			if(ifview==0)
 				continue;
-			viewhtml=viewhtml+'<li><a href="'+
+			viewhtml=viewhtml+'<li><a href="/gxttcc/newstt/index?a=3&b='+
 				typeid
 				+'"><div class="am-u-sm-8 am-u-md-8 am-u-lg-8"><strong class="f-toe">'+
 				title
@@ -98,7 +100,7 @@ $(function() {
 			var ifview=data.projectsList[i].aab114;
 			if(ifview==0)
 				continue;
-			viewhtml=viewhtml+'<li><a href="'+
+			viewhtml=viewhtml+'<li><a href="/gxttcc/newstt/index?a=4&b='+
 				typeid
 				+'"><div class="am-u-sm-8 am-u-md-8 am-u-lg-8"><strong class="f-toe">'+
 				title
@@ -113,7 +115,7 @@ $(function() {
 		var viewHTML='';
 		honorList.map(function(item,index){
 			if(item.aaa506!=0)
-				viewHTML+='<li data-thumb-alt="" style="width: 200px; margin-right: 5px; float: left; display: block;"><a href="#'+item.aaa501+'"><img src="'+urlToresource+item.aaa503+'" /><span class="f-toe">'+item.aaa502+'</span></a></li>';
+				viewHTML+='<li data-thumb-alt="" style="width: 200px; margin-right: 5px; float: left; display: block;"><a href="/gxttcc/companygx/index?a='+HONOR_PAGE_TAB+'&c='+item.aaa501+'"><img src="'+urlToresource+item.aaa503+'" /><span class="f-toe">'+item.aaa502+'</span></a></li>';
 		});
 		$('.honortt').children('.am-viewport').children('ul').html(viewHTML);
 	});

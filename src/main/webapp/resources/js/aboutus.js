@@ -226,4 +226,25 @@ $(function() {
 		$('#about-menu-e').removeClass('on');
 		$('#about-menu-f').removeClass('on');
 	}
+	var mt=getQueryString('t');
+	if(mt==1){
+		removeClassOnAll();
+		var aboutUs1={};
+		$.getJSON(getAboutAllUrl,function(data){
+			aboutUs1=data.aboutUs;
+			$('#about-menu-a').addClass('on');
+			$('#location-a').html('企业简介');
+			var viewHTML='<img src="'+imgUrlfix+aboutUs1.aaa204+'" style="height:800px;">';
+			console.log(viewHTML);
+			$('.cm-content').html(aboutUs1.aaa202+viewHTML);
+		});
+		
+	}
+	if(mt==2){
+		removeClassOnAll();
+		$('#about-menu-e').addClass('on');
+		$('#location-a').html('组织架构');
+		var viewHTML='<img src="'+imgUrlfix+'images/taitongjj08.png">';
+		$('.cm-content').html(viewHTML);
+	}
 })

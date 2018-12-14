@@ -5,23 +5,67 @@ public class News {
 	private Integer Aac101;
 	// 标题
 	private String Aac102;
+	// 第一段内容
+	private String Aac103;
+	// 第二段内容
+	private String Aac104;
+	// 第三段内容
+	private String Aac105;
+	// 第一段是否显示
+	private String Aac106;
+	// 第二段是否显示
+	private String Aac107;
+	// 第三段是否显示
+	private String Aac108;
+	// 第一张图片
+	private String Aac109;
+	// 第二张图片
+	private String Aac110;
+	// 第三张图片
+	private String Aac111;
 	// 日期
 	private String Aac112;
-	// 新闻介绍
-	private String Aac103;
-	private String Aac104;
-	private String Aac105;
-	// 新闻图片
-	private String Aac109;
-	private String Aac110;
-	private String Aac111;
 
+	// 分大类
+	private int Aac113;
 	// 是否显示标志
 	private boolean Aac114;
 	// 分小类
 	private int Aac115;
-	// 分大类
-	private int Aac113;
+	// 分小类名称
+	private String Aac116;
+
+	public String getAac106() {
+		return Aac106;
+	}
+
+	public void setAac106(String aac106) {
+		Aac106 = aac106;
+	}
+
+	public String getAac107() {
+		return Aac107;
+	}
+
+	public void setAac107(String aac107) {
+		Aac107 = aac107;
+	}
+
+	public String getAac108() {
+		return Aac108;
+	}
+
+	public void setAac108(String aac108) {
+		Aac108 = aac108;
+	}
+
+	public String getAac116() {
+		return Aac116;
+	}
+
+	public void setAac116(String aac116) {
+		Aac116 = aac116;
+	}
 
 	public int getAac113() {
 		return Aac113;
@@ -118,5 +162,4 @@ public class News {
 	public void setAac115(int aac115) {
 		Aac115 = aac115;
 	}
-
 }
