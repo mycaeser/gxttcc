@@ -44,13 +44,6 @@
 	src="../resources/lib/raty/jquery.raty.js"></script>
 <script type="text/javascript" src="../resources/js/main.min.js?t=1"></script>
 <script type="text/javascript" src="../resources/js/ttindex.js"></script>
-
-<!-- <style type="text/css">
-    .cm-tcontent{
-        width: 40%;
-        float: left;
-    }
-</style> -->
 </head>
 <body>
 	<header class="hd">
@@ -79,9 +72,9 @@
 		<nav style="font-size: 20px;">
 			<ul class="hd-navul am-collapse" style="height: 0px;">
 				<li class="on"><a href="/gxttcc/frontend/index">首页</a></li>
-				<li><a href="/gxttcc/companygx/index">关于我们</a></li>
-				<li><a href="newslist.php?bm01=1">新闻资讯</a></li>
-				<li><a href="projects.php?cm01=1&cm03=1">工程案例</a></li>
+				<li><a href="/gxttcc/companygx/index?t=1">关于我们</a></li>
+				<li><a href="/gxttcc/newstt/index?a=1&b=5">新闻资讯</a></li>
+				<li><a href="/gxttcc/projectstt/index?a=1&b=1">工程案例</a></li>
 				<li><a href="projects.php?cm01=2">人力资源</a>
 				<li><a href="joinus.html">联系我们</a>
 			</ul>
@@ -97,7 +90,7 @@
 					</div>
 					<div class="index-new-about">
 						<h1>
-							<!--  <?php echo $company_content ?> -->
+							
 						</h1>
 						<ul>
 							<li><a href="/gxttcc/companygx/index?t=1"> <em><i
@@ -136,44 +129,12 @@
 									<div class="index-new-tab-main">
 										<div class="am-u-sm-4 am-u-md-4 am-u-lg-5">
 											<div class="index-new-tab-img int1">
-												<!--  <?php
-                                                    $sql="select * from ab01 where aab101=1;";
-                                                    $result=mysqli_query($link,$sql);//执行sql语句
-                                                    if ($result instanceof mysqli_result)
-                                                    {
-                                                        while ( $row = $result->fetch_object() ) 
-                                                        {
-                                                            $itabimg01=$row->aab109;
-                                                            echo "<a href=\"#\"><img src=\"$itabimg01\" /></a>";
-                                                        }
-                                                    }
-                                                ?>
-                                                 -->
+												
 											</div>
 										</div>
 										<div class="am-u-sm-4 am-u-md-4 am-u-lg-7">
 											<div class="index-new-tab-list int11">
 												<ul>
-
-													<!--    <?php
-                                                        $sql="select * from ab01 where aab113=1;";
-                                                        $result=mysqli_query($link,$sql);//执行sql语句
-                                                        if ($result instanceof mysqli_result)
-                                                        {
-                                                            while ( $row = $result->fetch_object() )
-                                                            {
-                                                                $newtabct04=$row->aab114;//是否显示
-                                                                if($newtabct04==1)
-                                                                {
-                                                                    $newtabct01=$row->aab101;//编号
-                                                                    $newtabct02=$row->aab102;//标题
-                                                                    $newtabct03=$row->aab112;//日期
-                                                                    echo "<li><a href=\"newslist.php?bm01=1&bm02=$newtabct01\"><div class=\"am-u-sm-8 am-u-md-8 am-u-lg-8\"><strong class=\"f-toe\">$newtabct02</strong></div><div class=\"am-u-sm-4 am-u-md-4 am-u-lg-4\"><span>[$newtabct03]</span></div></a></li>";
-                                                                }                     
-                                                            }
-                                                        }
-                                                    ?>
-                                                    -->
 												</ul>
 
 											</div>
@@ -184,44 +145,11 @@
 									<div class="index-new-tab-main">
 										<div class="am-u-sm-4 am-u-md-4 am-u-lg-5">
 											<div class="index-new-tab-img int2">
-												<!--   <?php
-                                                    $sql="select * from ab01 where aab101=2;";
-                                                    $result=mysqli_query($link,$sql);//执行sql语句
-                                                    if ($result instanceof mysqli_result)
-                                                    {
-                                                        while ( $row = $result->fetch_object() ) 
-                                                        {
-                                                            $itabimg01=$row->aab109;
-                                                            echo "<a href=\"#\"><img src=\"$itabimg01\" /></a>";
-                                                        }
-                                                    }
-                                                ?>
-                                                -->
 											</div>
 										</div>
 										<div class="am-u-sm-4 am-u-md-4 am-u-lg-7">
 											<div class="index-new-tab-list int21">
 												<ul>
-													<!--   <?php
-                                                        $sql="select * from ab01 where aab113=2;";
-                                                        $result=mysqli_query($link,$sql);//执行sql语句
-                                                        if ($result instanceof mysqli_result)
-                                                        {
-                                                            while ( $row = $result->fetch_object() )
-                                                            {
-                                                                $newtabct04=$row->aab114;//是否显示
-                                                                if($newtabct04==1)
-                                                                {
-                                                                    $newtabct01=$row->aab101;//编号
-                                                                    $newtabct02=$row->aab102;//标题
-                                                                    $newtabct03=$row->aab112;//日期
-                                                                    echo "<li><a href=\"newslist.php?bm01=2&bm02=$newtabct01\"><div class=\"am-u-sm-8 am-u-md-8 am-u-lg-8\"><strong class=\"f-toe\">$newtabct02</strong></div><div class=\"am-u-sm-4 am-u-md-4 am-u-lg-4\"><span>[$newtabct03]</span></div></a></li>";
-                                                                }
-                                                                
-                                                            }
-                                                        }
-                                                    ?>
-                                                     -->
 												</ul>
 											</div>
 										</div>
@@ -231,44 +159,11 @@
 									<div class="index-new-tab-main">
 										<div class="am-u-sm-4 am-u-md-4 am-u-lg-5">
 											<div class="index-new-tab-img int3">
-												<!--    <?php
-                                                    $sql="select * from ab01 where aab101=3;";
-                                                    $result=mysqli_query($link,$sql);//执行sql语句
-                                                    if ($result instanceof mysqli_result)
-                                                    {
-                                                        while ( $row = $result->fetch_object() ) 
-                                                        {
-                                                            $itabimg01=$row->aab109;
-                                                            echo "<a href=\"#\"><img src=\"$itabimg01\" /></a>";
-                                                        }
-                                                    }
-                                                ?>
-                                                 -->
 											</div>
 										</div>
 										<div class="am-u-sm-4 am-u-md-4 am-u-lg-7">
 											<div class="index-new-tab-list int31">
 												<ul>
-													<!--      <?php
-                                                        $sql="select * from ab01 where aab113=3;";
-                                                        $result=mysqli_query($link,$sql);//执行sql语句
-                                                        if ($result instanceof mysqli_result)
-                                                        {
-                                                            while ( $row = $result->fetch_object() )
-                                                            {
-                                                                $newtabct04=$row->aab114;//是否显示
-                                                                if($newtabct04==1)
-                                                                {
-                                                                    $newtabct01=$row->aab101;//编号
-                                                                    $newtabct02=$row->aab102;//标题
-                                                                    $newtabct03=$row->aab112;//日期
-                                                                    echo "<li><a href=\"newslist.php?bm01=3&bm02=$newtabct01\"><div class=\"am-u-sm-8 am-u-md-8 am-u-lg-8\"><strong class=\"f-toe\">$newtabct02</strong></div><div class=\"am-u-sm-4 am-u-md-4 am-u-lg-4\"><span>[$newtabct03]</span></div></a></li>";
-                                                                }
-                                                                
-                                                            }
-                                                        }
-                                                    ?>
-                                                     -->
 												</ul>
 											</div>
 										</div>
@@ -278,45 +173,11 @@
 									<div class="index-new-tab-main">
 										<div class="am-u-sm-4 am-u-md-4 am-u-lg-5">
 											<div class="index-new-tab-img int4">
-												<!--   <?php
-                                                    $sql="select * from ab01 where aab101=4;";
-                                                    $result=mysqli_query($link,$sql);//执行sql语句
-                                                    if ($result instanceof mysqli_result)
-                                                    {
-                                                        while ( $row = $result->fetch_object() ) 
-                                                        {
-                                                            $itabimg01=$row->aab109;
-                                                            echo "<a href=\"#\"><img src=\"$itabimg01\" /></a>";
-                                                        }
-                                                    }
-                                                ?>
-                                                 -->
 											</div>
 										</div>
 										<div class="am-u-sm-4 am-u-md-4 am-u-lg-7">
 											<div class="index-new-tab-list int41">
 												<ul>
-													<!--  <?php
-                                                        $sql="select * from ab01 where aab113=4;";
-                                                        $result=mysqli_query($link,$sql);//执行sql语句
-                                                        if ($result instanceof mysqli_result)
-                                                        {
-                                                            while ( $row = $result->fetch_object() )
-                                                            {
-                                                                $newtabct04=$row->aab114;//是否显示
-                                                                if($newtabct04==1)
-                                                                {
-                                                                    $newtabct01=$row->aab101;//编号
-                                                                    $newtabct02=$row->aab102;//标题
-                                                                    $newtabct03=$row->aab112;//日期
-                                                                    echo "<li><a href=\"newslist.php?bm01=4&bm02=$newtabct01\"><div class=\"am-u-sm-8 am-u-md-8 am-u-lg-8\"><strong class=\"f-toe\">$newtabct02</strong></div><div class=\"am-u-sm-4 am-u-md-4 am-u-lg-4\"><span>[$newtabct03]</span></div></a></li>";
-                                                                }
-                                                                
-                                                            }
-                                                        }
-                                                    ?>
-                                                    -->
-
 												</ul>
 											</div>
 										</div>
@@ -331,8 +192,6 @@
 			</div>
 		</div>
 	</div>
-
-
 	<div class="index-honor">
 		<div class="cml-g">
 			<div class="cm-title">
@@ -344,21 +203,6 @@
 					data-am-flexslider="{itemWidth: 200, itemMargin: 5, slideshow: false}">
 					<ul class="am-slides">
 					 <li></li>
-					<!--   <?php
-                            $sql="select * from aa05";
-                            $result=mysqli_query($link,$sql);//执行sql语句
-                            if ($result instanceof mysqli_result)
-                            {
-                                while ( $row = $result->fetch_object() ) 
-                                {
-                                    $honor_01=$row->aaa502;//标题
-                                    $honor_02=$row->aaa503;//图片路径
-                                    $honor_03=$row->aaa501;//编号
-                                    echo "<li><a href=\"about.php?am04=am04&am042=$honor_03\"><img src=\"$honor_02\" /><span class=\"f-toe\">$honor_01</span></a></li>";
-                                }
-                            }
-                        ?>
-                        -->
 				</ul>
 				</div>
 			</div>
@@ -372,30 +216,6 @@
 			</div>
 			<div class="index-new-tab-list" id="botta">
 				<ul>
-					<!--   <?php
-                    $sql="select * from ac01 where aac113=1;";
-                    $result=mysqli_query($link,$sql);//执行sql语句
-                    if ($result instanceof mysqli_result)
-                    {
-                        $cnu=0;
-                        while ( $row = $result->fetch_object() )
-                        {
-                            $pjtarticle04=$row->aac114;//是否显示
-                            if($pjtarticle04==1)
-                            {
-                                if($cnu==7)
-                                    break;
-                                $pjtarticle01=$row->aac101;//编号
-                                $pjtarticle02=$row->aac102;//标题
-                                $pjtarticle03=$row->aac112;//日期
-                                echo "<li><a href=\"projects.php?cm01=1&cm02=$pjtarticle01\"><div class=\"am-u-sm-8 am-u-md-8 am-u-lg-8\"><strong class=\"f-toe\">$pjtarticle02</strong></div><div class=\"am-u-sm-4 am-u-md-4 am-u-lg-4\"><span>［$pjtarticle03]</span></div></a></li>";
-                                $cnu++;
-                            }
-                            
-                        }
-                    }
-                ?>
-                -->
 				</ul>
 			</div>
 		</div>
@@ -407,26 +227,6 @@
 			</div>
 			<div class="index-new-tab-list" id="bottb">
 				<ul>
-					<!--  <?php
-                    $sql="select * from ac01 where aac113=2;";
-                    $result=mysqli_query($link,$sql);//执行sql语句
-                    if ($result instanceof mysqli_result)
-                    {
-                        while ( $row = $result->fetch_object() )
-                        {
-                            $pjtarticle04=$row->aac114;//是否显示
-                            if($pjtarticle04==1)
-                            {
-                                $pjtarticle01=$row->aac101;//编号
-                                $pjtarticle02=$row->aac102;//标题
-                                $pjtarticle03=$row->aac112;//日期
-                                echo "<li><a href=\"projects.php?cm01=2&cm02=$pjtarticle01\"><div class=\"am-u-sm-8 am-u-md-8 am-u-lg-8\"><strong class=\"f-toe\">$pjtarticle02</strong></div><div class=\"am-u-sm-4 am-u-md-4 am-u-lg-4\"><span>［$pjtarticle03]</span></div></a></li>";
-                            }
-                            
-                        }
-                    }
-                ?>
-                -->
 				</ul>
 			</div>
 		</div>

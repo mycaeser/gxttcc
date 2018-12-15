@@ -40,4 +40,22 @@ public class ProjectsController {
 		}
 		return modelMap;
 	}
+	@RequestMapping(value="/hr",method=RequestMethod.GET)
+	private String toHR() {
+		return "tt/hr";
+	}
+	@RequestMapping(value="/gethrinfo",method=RequestMethod.GET)
+	@ResponseBody
+	private Map<String,Object> getHrInfo(HttpServletRequest request){
+		Map<String,Object> modelMap=new HashMap<String,Object>();
+		if(request.getParameter("typeid")!=null) {
+			int typeid=Integer.parseInt(request.getParameter("typeid"));
+			List<News> newsList=newsDao.queryNewsHR(typeid);
+			modelMap.put("newsList", newsList);
+		}else {
+			modelMap.put("success", false);
+			modelMap.put("errMsg", "gethrinfo error");
+		}
+		return modelMap;
+	}
 }

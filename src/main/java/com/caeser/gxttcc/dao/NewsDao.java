@@ -16,4 +16,10 @@ public interface NewsDao {
 	 * @return
 	 */
 	List<News> queryNewsByType(int type);
+	/**
+	 * 通过aac113查询人力资源
+	 * @param type
+	 * @return
+	 */
+	List<News> queryNewsHR(int type);
 }

@@ -77,14 +77,12 @@ $(function() {
 			var viewHTMLa='';
 			tmph='';
 			teamList.map(function(item,data){
-				//tmph+='<li ><a >'+item.aaa401+'</a></li>';
 				if(item.aaa401==whichid){
 					viewHTMLa='<div class="prodoct-list" > <div class="am-u-sm-6 am-u-md-6 am-u-lg-3"> <a > <img src="'+imgUrlfix+item.aaa403+'"> <span class="f-toe">'+item.aaa404+'</span></a></div><div class="am-u-sm-6 am-u-md-6"><p>'+item.aaa402+'</p></div></div>';	
 				}	
 			});
 			viewHTMLa=viewHTMLa+'<div class="cm-page"> <ul id="pgmtt">';
 			viewHTMLa=viewHTMLa+'</ul></div>';
-			//viewHTMLa=viewHTMLa+tmph+'</ul></div>';
 			$('.cm-content').html(viewHTMLa);
 		});
 	});
@@ -146,24 +144,30 @@ $(function() {
 		//点击荣誉资质详情
 		var viewHTMLc='';
 		var honorList1={};
+		var getIDarr=new Array();
+		var IDi=0;
 		$.getJSON(getHonorListUrl,function(data){
 			honorList1=data.honorList;
+			honorList1.map(function(item,date){
+				getIDarr[IDi]=item.aaa501;
+				IDi++;
+			});
+			IDi=0;
 			honorList1.map(function(item,data){
 				if(item.aaa501==mc){
-					var pre=Math.floor(mc)-1;
-					var nex=Math.floor(mc)+1;
+					var pre=vuleToID(getIDarr,mc)-1;
+					var nex=vuleToID(getIDarr,mc)+1;
 					var pageHTMLc='';
-					
 					var pageCount=Math.ceil(item.length/MAX_COUNT_ITEM);
-					if(pre<1){
-						pageHTMLc='<div class="cm-page"><ul><li class="item"><a href="?a=4&c=1">上一页</a></li>';
+					if(pre<0){
+						pageHTMLc='<div class="cm-page"><ul><li class="disabled"><a >上一页</a></li>';
 					}else{
-						pageHTMLc='<div class="cm-page"><ul><li class="item"><a href="?a=4&c='+pre+'">下一页</a></li>';
+						pageHTMLc='<div class="cm-page"><ul><li class="item"><a href="?a=4&c='+getIDarr[pre]+'">上一页</a></li>';
 					}
-					if(nex>pageCount){
-						pageHTMLc+='<li class="item"><a href="?a=4&c='+pageCount+'">上一页</a></li>';
+					if(nex>getIDarr.length-1){
+						pageHTMLc+='<li class="disabled"><a >下一页</a></li>';
 					}else{
-						pageHTMLc+='<li class="item"><a href="?a=4&c='+nex+'">下一页</a></li>';
+						pageHTMLc+='<li class="item"><a href="?a=4&c='+getIDarr[nex]+'">下一页</a></li>';
 					}
 					viewHTMLc=viewHTMLc+'<div class="cm-content-title">'+item.aaa502+'</div><img src="'+imgUrlfix+item.aaa503+'">'+item.aaa504+'<br />'+item.aaa505+pageHTMLc+'</ul></div>';
 					$('.cm-content').html(viewHTMLc);
@@ -235,7 +239,6 @@ $(function() {
 			$('#about-menu-a').addClass('on');
 			$('#location-a').html('企业简介');
 			var viewHTML='<img src="'+imgUrlfix+aboutUs1.aaa204+'" style="height:800px;">';
-			console.log(viewHTML);
 			$('.cm-content').html(aboutUs1.aaa202+viewHTML);
 		});
 		
