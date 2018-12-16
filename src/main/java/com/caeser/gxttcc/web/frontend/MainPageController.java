@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.caeser.gxttcc.dao.AddressDao;
 import com.caeser.gxttcc.dao.HonorDao;
 import com.caeser.gxttcc.dao.NewsDao;
+import com.caeser.gxttcc.entity.Address;
 import com.caeser.gxttcc.entity.Brief;
 import com.caeser.gxttcc.entity.Honor;
 import com.caeser.gxttcc.entity.News;
@@ -32,6 +34,8 @@ public class MainPageController {
 	private HonorDao honorDao;
 	@Autowired
 	private NewsDao newsDao;
+	@Autowired
+	private AddressDao addressDao;
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	private String index() {// 显示主页
@@ -125,6 +129,37 @@ public class MainPageController {
 			List<News> newsList = newsDao.queryIndexBottomItems(bottomaid);
 			modelMap.put("newsList", newsList);
 		}
+		return modelMap;
+	}
+	/**
+	 * 查询主公司地址
+	 * 
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value = "/getaddress", method = RequestMethod.GET)
+	@ResponseBody
+	private Map<String, Object> getAddress(HttpServletRequest request) {
+		Map<String, Object> modelMap = new HashMap<String, Object>();
+		if (request.getParameter("addid") != null) {
+			int addid = Integer.parseInt(request.getParameter("addid").toString());
+			Address add = addressDao.queryAddByID(addid);
+			modelMap.put("add", add);
+		}
+		return modelMap;
+	}
+	/**
+	 * 查询分公司地址
+	 * 
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value = "/getaddressot", method = RequestMethod.GET)
+	@ResponseBody
+	private Map<String, Object> getAddressOt(HttpServletRequest request) {
+		Map<String, Object> modelMap = new HashMap<String, Object>();	
+		List<Address> addList = addressDao.queryAddot();
+		modelMap.put("addList", addList);
 		return modelMap;
 	}
 }

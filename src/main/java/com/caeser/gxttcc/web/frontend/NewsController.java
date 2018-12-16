@@ -26,6 +26,10 @@ public class NewsController {
 	private String index() {
 		return "tt/news";
 	}
+	@RequestMapping(value = "/joinus", method = RequestMethod.GET)
+	private String joinUs() {
+		return "tt/joinus";
+	}
 
 	@RequestMapping(value = "/getnews", method = RequestMethod.GET)
 	@ResponseBody

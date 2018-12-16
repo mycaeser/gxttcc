@@ -99,4 +99,17 @@ public class AboutPageController {
 		}
 		return modelMap;
 	}
+	@RequestMapping(value="/getaboutus",method=RequestMethod.GET)
+	@ResponseBody
+	private Map<String,Object> getAboutUs(HttpServletRequest request){
+		Map<String,Object> modelMap=new HashMap<String,Object>();
+		AboutUs aboutUs=aboutUsDao.queryAboutUs();
+		if(aboutUs==null) {
+			modelMap.put("success", false);
+			modelMap.put("errMsg", "getaboutus error");
+		}else {
+			modelMap.put("aboutUs", aboutUs);
+		}
+		return modelMap;
+	}
 }

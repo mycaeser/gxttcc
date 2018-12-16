@@ -1,8 +1,19 @@
 package com.caeser.gxttcc.entity;
 
 public class Brief {
-	//简介内容
+
+	// ID
+	private Integer Aaa101;
+	// 简介内容
 	private String Aaa102;
+
+	public Integer getAaa101() {
+		return Aaa101;
+	}
+
+	public void setAaa101(Integer aaa101) {
+		Aaa101 = aaa101;
+	}
 
 	public String getAaa102() {
 		return Aaa102;
@@ -12,5 +23,4 @@ public class Brief {
 		Aaa102 = aaa102;
 	}
 
-	
 }

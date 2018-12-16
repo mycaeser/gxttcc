@@ -123,8 +123,7 @@ $(function() {
 		var bottoma=data.newsList;
 		var viewHTML='';
 		bottoma.map(function(item,index){
-			viewHTML+='<li><a href="'+item.aac101
-			+'"><div class="am-u-sm-8 am-u-md-8 am-u-lg-8"><strong class="f-toe">'+
+			viewHTML+='<li><a href="/gxttcc/projectstt/index?a='+item.aac115+'&b='+item.aac101+'"><div class="am-u-sm-8 am-u-md-8 am-u-lg-8"><strong class="f-toe">'+
 			item.aac102
 			+'</strong></div><div class="am-u-sm-4 am-u-md-4 am-u-lg-4"><span>'+
 			item.aac112
@@ -136,7 +135,7 @@ $(function() {
 		var bottoma=data.newsList;
 		var viewHTML='';
 		bottoma.map(function(item,index){
-			viewHTML+='<li><a href="'+item.aac101
+			viewHTML+='<li><a href="/gxttcc/projectstt/hr?a=2&b='+item.aac101
 			+'"><div class="am-u-sm-8 am-u-md-8 am-u-lg-8"><strong class="f-toe">'+
 			item.aac102
 			+'</strong></div><div class="am-u-sm-4 am-u-md-4 am-u-lg-4"><span>'+

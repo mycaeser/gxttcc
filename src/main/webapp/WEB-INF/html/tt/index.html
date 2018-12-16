@@ -1,15 +1,4 @@
-﻿<!--   <?php 
-    require('conndb.php');
-    $sql="select aaa102 from aa01 where aaa101=1";//
-    $result=mysqli_query($link,$sql);//执行sql语句
-    if ($result instanceof mysqli_result) { 
-        while ( $row = $result->fetch_object() ) {  
-            $company_content= $row->aaa102;  
-        } 
-    }
-
-?>
- -->
+﻿
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -42,6 +31,7 @@
 	src="../resources/lib/amazeui/amazeui.min.js"></script>
 <script type="text/javascript"
 	src="../resources/lib/raty/jquery.raty.js"></script>
+	<script type="text/javascript" src="../resources/js/common/com.js"></script>
 <script type="text/javascript" src="../resources/js/main.min.js?t=1"></script>
 <script type="text/javascript" src="../resources/js/ttindex.js"></script>
 </head>
@@ -75,8 +65,8 @@
 				<li><a href="/gxttcc/companygx/index?t=1">关于我们</a></li>
 				<li><a href="/gxttcc/newstt/index?a=1&b=5">新闻资讯</a></li>
 				<li><a href="/gxttcc/projectstt/index?a=1&b=1">工程案例</a></li>
-				<li><a href="projects.php?cm01=2">人力资源</a>
-				<li><a href="joinus.html">联系我们</a>
+				<li><a href="/gxttcc/projectstt/hr">人力资源</a>
+				<li><a href="/gxttcc/newstt/joinus">联系我们</a>
 			</ul>
 		</nav>
 	</div>
@@ -86,7 +76,7 @@
 			<div class="am-u-sm-12 am-u-md-4 am-u-lg-4">
 				<div class="index-new-left">
 					<div class="cm-title">
-						<em>企业简介</em><a href="about.php?am01=am01">更多<i class="font">&#xe61b;</i></a>
+						<em>企业简介</em><a href="/gxttcc/companygx/index?t=1">更多<i class="font">&#xe61b;</i></a>
 					</div>
 					<div class="index-new-about">
 						<h1>
@@ -112,7 +102,7 @@
 			<div class="am-u-sm-12 am-u-md-8 am-u-lg-8">
 				<div class="index-new-right">
 					<div class="cm-title">
-						<em>企业相关</em><a href="about.php?am01=am01">更多<i class="font">&#xe61b;</i></a>
+						<em>企业相关</em><a href="/gxttcc/companygx/index?t=1">更多<i class="font">&#xe61b;</i></a>
 					</div>
 					<div class="index-new-tab">
 						<div class="am-tabs" data-am-tabs="{noSwipe: 1}"
@@ -195,7 +185,7 @@
 	<div class="index-honor">
 		<div class="cml-g">
 			<div class="cm-title">
-				<em>荣誉资质</em><a href="about.php?am04=am04&am041=1">更多<i
+				<em>荣誉资质</em><a href="/gxttcc/companygx/index?a=4&pg=1">更多<i
 					class="font">&#xe61b;</i></a>
 			</div>
 			<div class="index-honor-silder">
@@ -212,7 +202,7 @@
 	<div class="index-product">
 		<div class="cml-g">
 			<div class="cm-title">
-				<em>案例细读</em><a href="projects.php?cm01=1">更多<i class="font">&#xe61b;</i></a>
+				<em>案例细读</em><a href="/gxttcc/projectstt/index?a=1&pg=1">更多<i class="font">&#xe61b;</i></a>
 			</div>
 			<div class="index-new-tab-list" id="botta">
 				<ul>
@@ -236,19 +226,7 @@
 	﻿
 	<footer class="footer">
 		<div class="cml-g">
-			<h2>
-				<span>广西泰通通信发展有限公司</span> <span>桂ICP备17006000号</span>
-			</h2>
-			<h3>
-				<span>柳州地址:柳州市柳南区柳太路1号颐华城14栋1单元12层</span> <span>邮编:4335100</span> <span>电话:0772-3211777</span>
-			</h3>
-			<h3>
-				<span>南宁地址:南宁市滨湖路1-3号金湖苑B座8单元616号</span> <span>邮编:4335100</span> <span>电话:0771-5608816</span>
-
-			</h3>
-			<h3>
-				<span>联系邮箱：lzdgdq@163.com</span>
-			</h3>
+			
 		</div>
 	</footer>
 </body>

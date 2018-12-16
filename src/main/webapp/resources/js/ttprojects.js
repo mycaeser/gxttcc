@@ -8,12 +8,14 @@ $(function(){
 	var htmlLabel=['#about-menu-a','#about-menu-b','#about-menu-c','#about-menu-d','#about-menu-e','#about-menu-f','#about-menu-g','#about-menu-h'];
 	var getMenuA={};
 	var getMenuB={};
+	var getMenuC={};
 	var ma=getQueryString('a');
 	var mb=getQueryString('b');
 	var md=getQueryString('pg');
 	for(var i=0;i<htmlLabel.length;i++){
 		aboutMenuType(htmlLabel[i],i+1);
 		detailType(htmlLabel[i],'案例细读',i+1);
+		goPage(i+1);
 	}
 	function removeClassOnAll(){
 		for(var j=0;j<htmlLabel.length;j++){
@@ -86,6 +88,39 @@ $(function(){
 					}
 				});
 			});
+		}
+	}
+	function goPage(whichID){
+		if(ma==whichID&&md!=null&&md!=''){
+			var viewHTMLd='';
+			var i=1;
+			var startPage=(Math.floor(md)-1)*MAX_COUNT_ITEM+1;//计算当前页码的开始ID
+			var finalPage=Math.floor(md)*MAX_COUNT_ITEM;//计算当前页码的结束ID
+			var viewHTML='<ul class="cm-new-list-ul">';
+			var viewHTMLm='';
+			var viewHTMLpage='<div class="cm-page"><ul class="honor-detail-tt">';
+			var pageTMP='';
+			var count=0;
+			$.getJSON(getProjectsUrl+whichID,function(data){
+				getMenuC=data.newsList;
+				count=getMenuC.length;
+				getMenuC.map(function(item,data){
+					if(i>startPage-1&&i<finalPage+1){//输出当前页码的条目
+						viewHTMLm+='<li><a href="?a='+whichID+'&b='+item.aac101+'"><span>'+item.aac102+'</span><i>'+item.aac112+'</i></a></li>';	
+					}
+					i++;
+				});
+				var pageNum=Math.ceil(count/MAX_COUNT_ITEM);//计算总页数
+				for(var a=0;a<pageNum;a++){
+					var ia=a+1;
+					if(ia==md){//当前加标签class on
+						pageTMP+='<li class="on"><a href="?a='+whichID+'&pg='+ia+'">'+ia+'</a></li>';
+					}else{
+						pageTMP+='<li><a href="?a='+whichID+'&pg='+ia+'">'+ia+'</a></li>';
+					}
+				}
+				$('.cm-content').html(viewHTML+viewHTMLm+'</ul>'+viewHTMLpage+pageTMP+'</ul></div>');
+			});	
 		}
 	}
 })

@@ -8,4 +8,11 @@ public interface BriefDao {
 	 * @return
 	 */
 	Brief queryBrief();
+	
+	/**
+	 * 修改首页简介
+	 * @param brief
+	 * @return
+	 */
+	int updateBrief(Brief brief);
 }
