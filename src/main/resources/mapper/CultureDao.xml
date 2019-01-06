@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.caeser.gxttcc.dao.CultureDao">
+	<select id="queryCulture" resultType="com.caeser.gxttcc.entity.Culture">
+		SELECT  aaa302,aaa303,aaa304,aaa305,aaa309,aaa310,aaa311,aaa312
+		FROM aa03
+	</select>
+	<update id="updateCulture" parameterType="com.caeser.gxttcc.entity.Culture">
+		update aa03
+		<set>
+			<if test="aaa302 != null">aaa302=#{aaa302},</if>
+			<if test="aaa303 != null">aaa303=#{aaa303},</if>
+			<if test="aaa304 != null">aaa304=#{aaa304},</if>
+			<if test="aaa305 != null">aaa305=#{aaa305},</if>
+			<if test="aaa309 != null">aaa309=#{aaa309},</if>
+			<if test="aaa310 != null">aaa310=#{aaa310},</if>
+			<if test="aaa311 != null">aaa311=#{aaa311},</if>
+			<if test="aaa312 != null">aaa312=#{aaa312}</if>
+		</set>
+		where aaa301=1
+	</update>
+</mapper>   

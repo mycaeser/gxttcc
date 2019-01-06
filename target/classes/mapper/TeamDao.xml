@@ -3,9 +3,28 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.caeser.gxttcc.dao.TeamDao">
+	<select id="queryTeamById" resultType="com.caeser.gxttcc.entity.Team">
+		SELECT  aaa401,aaa402,aaa403,aaa404
+		FROM aa04
+		WHERE aaa401=#{id}
+	</select>
 	<select id="queryTeam" resultType="com.caeser.gxttcc.entity.Team">
 		SELECT  aaa401,aaa402,aaa403,aaa404
 		FROM aa04
 	</select>
+	<delete id="deleteTeamById" parameterType="int">
+		DELETE FROM
+		aa04
+		WHERE aaa401=#{id}
+	</delete>
+	<update id="updateTeam" parameterType="com.caeser.gxttcc.entity.Team">
+		update aa04
+		<set>
+			<if test="aaa402 != null">aaa402=#{aaa402},</if>
+			<if test="aaa403 != null">aaa403=#{aaa403},</if>
+			<if test="aaa404 != null">aaa404=#{aaa404}</if>
+		</set>
+		where aaa401=#{aaa401}
+	</update>
 </mapper>
     

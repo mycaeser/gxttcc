@@ -9,5 +9,12 @@
 		WHERE
 		aaa201=1
 	</select>
+	<update id="updateAboutUsa" parameterType="com.caeser.gxttcc.entity.AboutUs">
+		update aa02
+		<set>
+			<if test="aaa202 != null">aaa202=#{aaa202}</if>
+		</set>
+		where aaa201=1
+	</update>
 </mapper>
     

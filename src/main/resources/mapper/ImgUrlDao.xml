@@ -2,16 +2,10 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.caeser.gxttcc.dao.BriefDao">
+<mapper namespace="com.caeser.gxttcc.dao.ImgUrlDao">
 	<select id="queryUrl" resultType="com.caeser.gxttcc.entity.ImgUrl">
 		SELECT  img_id,img_url_name
 		FROM tt_imgurl
 	</select>
-	<update id="updateUrlA" parameterType="com.caeser.gxttcc.entity.Brief">
-		update tt_imgurl
-		<set>
-			<if test="img_url_name != null">img_url_name=#{newname}</if>
-		</set>
-		where img_id=1
-	</update>
+	
 </mapper>

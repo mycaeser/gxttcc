@@ -8,4 +8,9 @@ public interface AboutUsDao {
 	 * @return
 	 */
 	AboutUs queryAboutUs();
+	/**
+	 * 更新简介内容
+	 * @return
+	 */
+	int updateAboutUsa(AboutUs aboutUs);
 }

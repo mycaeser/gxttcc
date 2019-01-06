@@ -9,4 +9,9 @@ public interface CultureDao {
 	 * @return
 	 */
 	Culture queryCulture();
+	/**
+	 * 修改企业文化
+	 * @return
+	 */
+	int updateCulture(Culture culture);
 }

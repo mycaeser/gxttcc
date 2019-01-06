@@ -9,9 +9,9 @@ public interface ImgUrlDao {
 	 * @return
 	 */
 	ImgUrl queryUrl();
-	/**
-	 * URL名字编号增长1
-	 * @return
-	 */
-	int updateUrlA(String newname);
+//	/**
+//	 * URL名字编号增长1
+//	 * @return
+//	 */
+//	int updateUrlA(String newname);
 }

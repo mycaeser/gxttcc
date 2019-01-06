@@ -12,4 +12,24 @@
 		SELECT  aaa501,aaa502,aaa503,aaa504,aaa505,aaa506
 		FROM aa05
 	</select>
+	<select id="queryHonorById" resultType="com.caeser.gxttcc.entity.Honor">
+		SELECT  aaa501,aaa502,aaa503,aaa504,aaa505,aaa506
+		FROM aa05
+		WHERE aaa501=#{id}
+	</select>
+	<delete id="deleteHonerById" parameterType="int">
+		DELETE FROM
+		aa05
+		WHERE aaa501=#{id}
+	</delete>
+	<update id="updateHonor" parameterType="com.caeser.gxttcc.entity.Honor">
+		update aa05
+		<set>
+			<if test="aaa502 != null">aaa502=#{aaa502},</if>
+			<if test="aaa503 != null">aaa503=#{aaa503},</if>
+			<if test="aaa504 != null">aaa504=#{aaa504},</if>
+			<if test="aaa505 != null">aaa505=#{aaa505}</if>
+		</set>
+		where aaa501=#{aaa501}
+	</update>
 </mapper>

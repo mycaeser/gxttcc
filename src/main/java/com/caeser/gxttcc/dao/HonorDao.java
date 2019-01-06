@@ -15,4 +15,22 @@ public interface HonorDao {
 	 * @return
 	 */
 	List<Honor> queryHonorAll();
+	/**
+	 * 根据ID删除一个荣誉资质
+	 * @param id
+	 * @return
+	 */
+	int deleteHonerById(int id);
+	/**
+	 * 根据ID查询一条荣誉资质
+	 * @param id
+	 * @return
+	 */
+	Honor queryHonorById(int id);
+	/**
+	 * 根据ID更新一条荣誉资质
+	 * @param honor
+	 * @return
+	 */
+	int updateHonor(Honor honor);
 }
