@@ -7,5 +7,11 @@
 		SELECT  img_id,img_url_name
 		FROM tt_imgurl
 	</select>
-	
+	<update id="updateUrlA" parameterType="com.caeser.gxttcc.entity.ImgUrl">
+		update tt_imgurl
+		<set>
+			<if test="ImgUrlName != null">img_url_name=#{ImgUrlName}</if>
+		</set>
+		where img_id=1
+	</update>
 </mapper>

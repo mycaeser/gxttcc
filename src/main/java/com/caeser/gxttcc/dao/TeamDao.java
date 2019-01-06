@@ -27,4 +27,10 @@ public interface TeamDao {
 	 * @return
 	 */
 	int updateTeam(Team team);
+	/**
+	 * 插入一条管理团队数据
+	 * @param team
+	 * @return
+	 */
+	int insertTeam(Team team);
 }

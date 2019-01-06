@@ -1,5 +1,6 @@
 package com.caeser.gxttcc.web.frontend;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,13 +14,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.caeser.gxttcc.dao.NewsDao;
+import com.caeser.gxttcc.dao.ProjectsTypeDao;
 import com.caeser.gxttcc.entity.News;
+import com.caeser.gxttcc.entity.ProjectsType;
 
 @Controller
 @RequestMapping("/projectstt")
 public class ProjectsController {
 	@Autowired
 	private NewsDao newsDao;
+	@Autowired
+	private ProjectsTypeDao projectsTypeDao;
 	
 	@RequestMapping(value="/index",method=RequestMethod.GET)
 	private String index() {
@@ -55,6 +60,17 @@ public class ProjectsController {
 		}else {
 			modelMap.put("success", false);
 			modelMap.put("errMsg", "gethrinfo error");
+		}
+		return modelMap;
+	}
+	@RequestMapping(value="/getprojectstype",method=RequestMethod.GET)
+	@ResponseBody
+	private Map<String,Object> getProjectsType(HttpServletRequest request){
+		Map<String,Object> modelMap=new HashMap<String,Object>();
+		List<ProjectsType> projectsTypeList=new ArrayList<ProjectsType>();
+		projectsTypeList=projectsTypeDao.queryProjectsType();
+		if(projectsTypeList!=null) {
+			modelMap.put("projectsTypeList", projectsTypeList);
 		}
 		return modelMap;
 	}

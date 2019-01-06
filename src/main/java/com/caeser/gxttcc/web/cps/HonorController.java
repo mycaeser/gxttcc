@@ -47,6 +47,16 @@ public class HonorController {
 	private Map<String, Object> deleteHonorById(HttpServletRequest request) {
 		Map<String, Object> modelMap = new HashMap<String, Object>();
 		int honorId = HttpServletRequestUtil.getInt(request, "id");
+		
+		Honor honorItem=new Honor();
+		honorItem=honorDao.queryHonorById(honorId);
+		if(honorItem!=null) {
+			String honorImgName=honorItem.getAaa503();
+			honorImgName=honorImgName.substring(7,honorImgName.lastIndexOf("."));
+			String dest = PathUtil.getImgBasePath();
+			String relativeAddr = dest + honorImgName + ".jpg";
+			ImageUtil.deleteFileOrPath(relativeAddr);
+		}
 		int effectedNum=honorDao.deleteHonerById(honorId);
 		if(effectedNum<1) {
 			modelMap.put("success", false);

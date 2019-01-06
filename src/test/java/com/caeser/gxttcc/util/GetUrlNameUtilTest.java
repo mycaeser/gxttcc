@@ -12,9 +12,12 @@ public class GetUrlNameUtilTest extends BaseTest{
 	private ImgUrlDao imgUrlDao;
 	@Test
 	public void testQueryUrlName() {
-		
+		ImgUrl testImgUrl=new ImgUrl();
 		ImgUrl imgUrl=imgUrlDao.queryUrl();
 		String tmp=GetUrlNameUtil.getUrlName(imgUrl);
 		System.out.println(tmp);
+		testImgUrl.setImgUrlName(tmp+".jpg");
+		int effectedNum=imgUrlDao.updateUrlA(testImgUrl);
+		System.out.println("num="+effectedNum);
 	}
 }

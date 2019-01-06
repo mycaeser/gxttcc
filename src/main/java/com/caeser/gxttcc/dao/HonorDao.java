@@ -33,4 +33,10 @@ public interface HonorDao {
 	 * @return
 	 */
 	int updateHonor(Honor honor);
+	/**
+	 * 插入一条荣誉资质
+	 * @param honor
+	 * @return
+	 */
+	int insertHonor(Honor honor);
 }

@@ -26,5 +26,12 @@
 		</set>
 		where aaa401=#{aaa401}
 	</update>
+	<insert id="insertTeam" useGeneratedKeys="true"
+		keyProperty="Aaa401" keyColumn="aaa401">
+		INSERT INTO
+		aa04(Aaa402,Aaa403,Aaa404)
+		VALUES
+		(#{aaa402},#{aaa403},#{aaa404})
+	</insert>
 </mapper>
     

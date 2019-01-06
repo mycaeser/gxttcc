@@ -106,7 +106,7 @@ public class ImageUtil {
 		try {
 			Thumbnails.of(thumbnail.getImage()).size(400, 500)
 					.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.png")), 0.25f)
-					.outputQuality(0.9f).toFile(dest);
+					.outputQuality(1.0f).toFile(dest);
 		} catch (IOException e) {
 			logger.error(e.toString());
 			throw new RuntimeException("创建缩图片失败：" + e.toString());
@@ -164,7 +164,7 @@ public class ImageUtil {
 	 * @param storePath
 	 */
 	public static void deleteFileOrPath(String storePath) {
-		File fileOrPath = new File(PathUtil.getImgBasePath() + storePath);
+		File fileOrPath = new File(storePath);
 		if (fileOrPath.exists()) {
 			if (fileOrPath.isDirectory()) {
 				File files[] = fileOrPath.listFiles();

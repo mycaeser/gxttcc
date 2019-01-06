@@ -48,6 +48,16 @@ public class TeamController {
 	private Map<String, Object> deleteTeamById(HttpServletRequest request) {
 		Map<String, Object> modelMap = new HashMap<String, Object>();
 		int teamId = HttpServletRequestUtil.getInt(request, "id");
+		
+		Team deleteTeamObj=new Team();
+		deleteTeamObj=teamDao.queryTeamById(teamId);
+		if(deleteTeamObj!=null) {
+			String teamImgName=deleteTeamObj.getAaa403();
+			teamImgName=teamImgName.substring(7,teamImgName.lastIndexOf("."));
+			String dest = PathUtil.getImgBasePath();
+			String relativeAddr = dest + teamImgName + ".jpg";
+			ImageUtil.deleteFileOrPath(relativeAddr);
+		}
 		int effectedNum=teamDao.deleteTeamById(teamId);
 		if(effectedNum<1) {
 			modelMap.put("success", false);
