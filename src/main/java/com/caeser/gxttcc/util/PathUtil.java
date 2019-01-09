@@ -8,7 +8,7 @@ public class PathUtil {
 		String os = System.getProperty("os.name");
 		String basePath = "";
 		if (os.toLowerCase().startsWith("win")) {
-			basePath = "L:/mygit/java/gxttcc/src/main/webapp/resources/images/";
+			basePath = "D:/gxttccimg/v1/";
 		} else {
 			basePath = "/home/roofso/image/";
 		}

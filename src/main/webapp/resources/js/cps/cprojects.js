@@ -30,8 +30,9 @@ $(function(){
 			newsObj.map(function(item,data){
 				outHtml2+='<tr><td>'+item.aac101+'</td><td>'+item.aac102+'</td><td>'+item.aac116+'</td><td>'+item.aac112+'</td><td><a href="/gxttcc/cps/brief?a=4&b=2&c='+item.aac101+'" >删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/gxttcc/cps/brief?b=1&c='+item.aac101+'" >编辑</a></td></tr>';
 			});//
-			$('.ue-clear').html('<a href="/gxttcc/addarticlemodel/addteam?a=1" >新增文章</a><br /><br />'+outHtml1+outHtml2+outHtml3);
+			$('.ue-clear').html(outHtml1+outHtml2+outHtml3);
 		});
+		$('#add-atl').html('<a href="/gxttcc/addprojectsarticle/index" >新增文章</a>')
 	}
 	function getQueryString(name) {
 		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");

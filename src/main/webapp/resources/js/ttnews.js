@@ -4,7 +4,7 @@
 $(function(){
 	var getNewUrl='/gxttcc/newstt/getnews?typeid=';
 	var MAX_COUNT_ITEM=8;
-	var imgUrlfix='../resources/';
+	var imgUrlfix='/';
 	var htmlLabel=['#about-menu-a','#about-menu-b','#about-menu-c','#about-menu-d'];
 	var localHtmlLabel=['公司动态','行业新闻','通信知识','企业公告'];
 	var getMenuA={};

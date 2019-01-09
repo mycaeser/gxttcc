@@ -38,10 +38,7 @@ public class AddArticleModelController {
 	@Autowired
 	private HonorDao honorDao;
 	
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	private String admin() {// 显示主页
-		return "tt/cps/addarticle";
-	}
+	
 	@RequestMapping(value = "/addteam", method = RequestMethod.GET)
 	private String addTeam() {// 显示主页
 		return "tt/cps/addteamarticle";

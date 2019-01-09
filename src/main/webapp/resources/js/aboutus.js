@@ -6,7 +6,7 @@ $(function() {
 	var getHonorListUrl='/gxttcc/companygx/gethonorlist';
 	var getTeamListUrl='/gxttcc/companygx/getteamlist';
 	var getCulture='/gxttcc/companygx/getculture';
-	var imgUrlfix='../resources/';
+	var imgUrlfix='/';
 	var MAX_COUNT_ITEM=8;
 	var aboutUs={};
 	var culture={};

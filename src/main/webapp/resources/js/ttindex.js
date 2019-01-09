@@ -8,7 +8,7 @@ $(function() {
 	var getTabUrl='/gxttcc/frontend/getindextabimg?tabid=';
 	//获得主页tab四个标签内容标题、日期
 	var getTabContent='/gxttcc/frontend/getindextabcontent?type=';
-	var urlToresource='../resources/';
+	var urlToresource='/';
 	var getHonorUrl='/gxttcc/frontend/gethonor';
 	var getBottomUrl='/gxttcc/frontend/getbottoma?bottomaid=';
 	//荣誉资质页面标志
@@ -17,7 +17,7 @@ $(function() {
 		var briefIntroduction=data.briefIntroduction;
 		$('.index-new-about').children('h1').html(briefIntroduction);
 	});
-	var urlToresource='../resources/';
+	var urlToresource='/';
 	var tabName='.int';
 	
 	$.getJSON(getTabUrl+1,function(data){

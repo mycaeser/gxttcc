@@ -4,7 +4,7 @@
 $(function(){
 	var getProjectsUrl='/gxttcc/projectstt/gethrinfo?typeid=';
 	var MAX_COUNT_ITEM=8;
-	var imgUrlfix='../resources/';
+	var imgUrlfix='/';
 	var getMenuA={};
 	var ma=getQueryString('a');
 	var mb=getQueryString('b');

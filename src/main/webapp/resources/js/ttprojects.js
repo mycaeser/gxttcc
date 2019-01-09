@@ -4,7 +4,7 @@
 $(function(){
 	var getProjectsUrl='/gxttcc/projectstt/getprojects?typeid=';
 	var MAX_COUNT_ITEM=8;
-	var imgUrlfix='../resources/';
+	var imgUrlfix='/';
 	var htmlLabel=['#about-menu-a','#about-menu-b','#about-menu-c','#about-menu-d','#about-menu-e','#about-menu-f','#about-menu-g','#about-menu-h'];
 	var getMenuA={};
 	var getMenuB={};

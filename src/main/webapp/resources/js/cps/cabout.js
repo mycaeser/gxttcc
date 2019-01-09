@@ -15,7 +15,7 @@ $(function(){
 	var deleteHonorUrl='/gxttcc/cps/deletehonorbyid';
 	var getHonoryByIdUrl='/gxttcc/cps/gethonorbyid?id=';
 	var updateHonorUrl='/gxttcc/cps/updatehonorbyid';
-	var imgUrlfix='../resources/';
+	var imgUrlfix='/';
 	var inHtml='';
 	var ma=getQueryString('a');
 	if(ma!=null&&ma==1){
