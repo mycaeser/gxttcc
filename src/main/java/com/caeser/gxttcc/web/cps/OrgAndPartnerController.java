@@ -37,7 +37,7 @@ public class OrgAndPartnerController {
 			try {
 				ImageHolder imageHolder=new ImageHolder(honorImg.getOriginalFilename(),honorImg.getInputStream());
 				String dest = PathUtil.getImgBasePath();
-				String tmpName="taitongjj08.jpg";
+				String tmpName="taitongjj08";
 				ImageUtil.generateNormalImg(imageHolder, dest,tmpName);
 			} catch (IOException e) {
 				modelMap.put("success", false);

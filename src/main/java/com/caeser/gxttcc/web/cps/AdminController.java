@@ -102,8 +102,8 @@ public class AdminController {
 				ImageHolder imageHolder=new ImageHolder(briefImg.getOriginalFilename(),briefImg.getInputStream());
 				String dest = PathUtil.getImgBasePath();
 				String tmpName=aboutUsDao.queryAboutUs().getAaa204();
-				tmpName=tmpName.substring(7,tmpName.lastIndexOf("."));
-				ImageUtil.generateNormalImg(imageHolder, dest,tmpName);
+				tmpName=tmpName.substring(PathUtil.filePathInDatabase.length(),tmpName.lastIndexOf("."));
+				ImageUtil.copyFile(imageHolder, dest,tmpName);
 			} catch (IOException e) {
 				modelMap.put("success", false);
 				modelMap.put("errMsg", e.getMessage());

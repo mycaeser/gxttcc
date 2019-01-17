@@ -2,6 +2,7 @@ package com.caeser.gxttcc.util;
 
 public class PathUtil {
 	private static String seperator = System.getProperty("file.separator");
+	public static String filePathInDatabase="images/";
 
 	public static String getImgBasePath() {
 

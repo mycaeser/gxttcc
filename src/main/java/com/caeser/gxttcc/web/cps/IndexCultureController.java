@@ -65,7 +65,7 @@ public class IndexCultureController {
 				ImageHolder imageHolder=new ImageHolder(cultureImg1.getOriginalFilename(),cultureImg1.getInputStream());
 				String dest = PathUtil.getImgBasePath();
 				String tmpName=cultureDao.queryCulture().getAaa309();
-				tmpName=tmpName.substring(7,tmpName.lastIndexOf("."));
+				tmpName=tmpName.substring(PathUtil.filePathInDatabase.length(),tmpName.lastIndexOf("."));
 				ImageUtil.generateNormalImg(imageHolder, dest,tmpName);
 			} catch (IOException e) {
 				modelMap.put("success", false);
@@ -77,7 +77,7 @@ public class IndexCultureController {
 				ImageHolder imageHolder=new ImageHolder(cultureImg2.getOriginalFilename(),cultureImg2.getInputStream());
 				String dest = PathUtil.getImgBasePath();
 				String tmpName=cultureDao.queryCulture().getAaa310();
-				tmpName=tmpName.substring(7,tmpName.lastIndexOf("."));
+				tmpName=tmpName.substring(PathUtil.filePathInDatabase.length(),tmpName.lastIndexOf("."));
 				ImageUtil.generateNormalImg(imageHolder, dest,tmpName);
 			} catch (IOException e) {
 				modelMap.put("success", false);
@@ -89,7 +89,7 @@ public class IndexCultureController {
 				ImageHolder imageHolder=new ImageHolder(cultureImg3.getOriginalFilename(),cultureImg3.getInputStream());
 				String dest = PathUtil.getImgBasePath();
 				String tmpName=cultureDao.queryCulture().getAaa311();
-				tmpName=tmpName.substring(7,tmpName.lastIndexOf("."));
+				tmpName=tmpName.substring(PathUtil.filePathInDatabase.length(),tmpName.lastIndexOf("."));
 				ImageUtil.generateNormalImg(imageHolder, dest,tmpName);
 			} catch (IOException e) {
 				modelMap.put("success", false);

@@ -236,7 +236,8 @@ $(function(){
 	if(ma!=null&&ma==7){//显示荣誉资质
 		$('.ue-clear').html('<table border="1"><tr><th>编号</th><th>图片</th><th>编辑</th></tr><tr><td>1</td><td><img style="width:100px;height:100px;" src="'+imgUrlfix+'images/hezuo.jpg"></td><td><input id="org-img" type="file"></td></tr></table>');
 	}
-	function getQueryString(name) {
+})
+function getQueryString(name) {
 		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
 		var r = window.location.search.substr(1).match(reg);
 		if (r != null) {
@@ -244,4 +245,3 @@ $(function(){
 		}
 		return '';
 	}
-})

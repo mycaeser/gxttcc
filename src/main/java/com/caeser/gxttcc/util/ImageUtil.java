@@ -1,6 +1,9 @@
 package com.caeser.gxttcc.util;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -114,7 +117,34 @@ public class ImageUtil {
 		// 返回图片相对路径地址
 		return relativeAddr;
 	}
+	public static void copyFile(ImageHolder imgHolder, String targetAddr,String fileName) throws IOException {
+        BufferedInputStream inBuff = null;
+        BufferedOutputStream outBuff = null;
+        String extension = getFileExtension(imgHolder.getImageName());
+        try {
+            // 新建文件输入流并对它进行缓冲
+        	File targetFile=new File(targetAddr+fileName+extension);
+            inBuff = new BufferedInputStream(imgHolder.getImage());
 
+            // 新建文件输出流并对它进行缓冲
+            outBuff = new BufferedOutputStream(new FileOutputStream(targetFile));
+
+            // 缓冲数组
+            byte[] b = new byte[1024 * 5];
+            int len;
+            while ((len = inBuff.read(b)) != -1) {
+                outBuff.write(b, 0, len);
+            }
+            // 刷新此缓冲的输出流
+            outBuff.flush();
+        } finally {
+            // 关闭流
+            if (inBuff != null)
+                inBuff.close();
+            if (outBuff != null)
+                outBuff.close();
+        }
+    }
 	/**
 	 * 创建目标路径所涉及到的目录，即/home/work/xiangze/xxx.jpg, 那么 home work xiangze
 	 * 这三个文件夹都得自动创建
@@ -135,7 +165,7 @@ public class ImageUtil {
 	 * @param thumbnail
 	 * @return
 	 */
-	private static String getFileExtension(String fileName) {
+	public static String getFileExtension(String fileName) {
 		return fileName.substring(fileName.lastIndexOf("."));
 	}
 

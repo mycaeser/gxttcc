@@ -38,7 +38,6 @@ public class AddArticleModelController {
 	@Autowired
 	private HonorDao honorDao;
 	
-	
 	@RequestMapping(value = "/addteam", method = RequestMethod.GET)
 	private String addTeam() {// 显示主页
 		return "tt/cps/addteamarticle";
@@ -55,38 +54,38 @@ public class AddArticleModelController {
 		Team teamItem=new Team();
 		ImgUrl imgUrl=imgUrlDao.queryUrl();
 		String newImgUrl=GetUrlNameUtil.getUrlName(imgUrl);
-		teamItem.setAaa402(teamTitle);
-		teamItem.setAaa403("images/"+newImgUrl+".jpg");
-		teamItem.setAaa404(teamDate);
-		int effectedNum=teamDao.insertTeam(teamItem);
-		if(effectedNum<1) {
-			modelMap.put("success", false);
-			modelMap.put("errMsg", "添加团队一项失败");
-		}
+		String fileExtension=".jpg";
 		if (commonsMultipartResolver.isMultipart(request)) {
 			MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
 			teamImg = (CommonsMultipartFile) multipartHttpServletRequest.getFile("teamImg");
 			String dest = PathUtil.getImgBasePath();
 			ImageHolder imageHolder;
 			ImgUrl newImgUrlobj=new ImgUrl();
-			newImgUrlobj.setImgUrlName(newImgUrl+".jpg");
-			int effectedNum1=imgUrlDao.updateUrlA(newImgUrlobj);
-			if(effectedNum1<1) {
-				modelMap.put("success", false);
-				modelMap.put("errMsg", "更新imgurl失败");
-			}
 			if(teamImg!=null) {
 				try {
 					imageHolder = new ImageHolder(teamImg.getOriginalFilename(),teamImg.getInputStream());
-					ImageUtil.generateNormalImg(imageHolder, dest,newImgUrl);
-					
+					ImageUtil.copyFile(imageHolder, dest, newImgUrl);
+					fileExtension=ImageUtil.getFileExtension(imageHolder.getImageName());
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
+			newImgUrlobj.setImgUrlName(newImgUrl+fileExtension);
+			int effectedNum1=imgUrlDao.updateUrlA(newImgUrlobj);
+			if(effectedNum1<1) {
+				modelMap.put("success", false);
+				modelMap.put("errMsg", "更新imgurl失败");
+			}
 		}
-		
+		teamItem.setAaa402(teamTitle);
+		teamItem.setAaa403(PathUtil.filePathInDatabase+newImgUrl+fileExtension);
+		teamItem.setAaa404(teamDate);
+		int effectedNum=teamDao.insertTeam(teamItem);
+		if(effectedNum<1) {
+			modelMap.put("success", false);
+			modelMap.put("errMsg", "添加团队一项失败");
+		}
 		return modelMap;
 	}
 	@RequestMapping(value = "/addhonor", method = RequestMethod.POST)
@@ -102,8 +101,32 @@ public class AddArticleModelController {
 		Honor honorItem=new Honor();
 		ImgUrl imgUrl=imgUrlDao.queryUrl();
 		String newImgUrl=GetUrlNameUtil.getUrlName(imgUrl);
+		String fileExtension=".jpg";
+		if (commonsMultipartResolver.isMultipart(request)) {
+			MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
+			honorImg = (CommonsMultipartFile) multipartHttpServletRequest.getFile("honorImg");
+			String dest = PathUtil.getImgBasePath();
+			ImageHolder imageHolder;
+			ImgUrl newImgUrlobj=new ImgUrl();
+			if(honorImg!=null) {
+				try {
+					imageHolder = new ImageHolder(honorImg.getOriginalFilename(),honorImg.getInputStream());
+					ImageUtil.copyFile(imageHolder, dest, newImgUrl);
+					fileExtension=ImageUtil.getFileExtension(imageHolder.getImageName());
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			newImgUrlobj.setImgUrlName(newImgUrl+fileExtension);
+			int effectedNum1=imgUrlDao.updateUrlA(newImgUrlobj);
+			if(effectedNum1<1) {
+				modelMap.put("success", false);
+				modelMap.put("errMsg", "更新imgurl失败");
+			}
+		}
 		honorItem.setAaa502(honorTitle);
-		honorItem.setAaa503("images/"+newImgUrl+".jpg");
+		honorItem.setAaa503(PathUtil.filePathInDatabase+newImgUrl+fileExtension);
 		honorItem.setAaa504(honorText);
 		honorItem.setAaa505(honorDate);
 		int effectedNum=honorDao.insertHonor(honorItem);
@@ -111,30 +134,6 @@ public class AddArticleModelController {
 			modelMap.put("success", false);
 			modelMap.put("errMsg", "添加团队一项失败");
 		}
-		if (commonsMultipartResolver.isMultipart(request)) {
-			MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
-			honorImg = (CommonsMultipartFile) multipartHttpServletRequest.getFile("honorImg");
-			String dest = PathUtil.getImgBasePath();
-			ImageHolder imageHolder;
-			ImgUrl newImgUrlobj=new ImgUrl();
-			newImgUrlobj.setImgUrlName(newImgUrl+".jpg");
-			int effectedNum1=imgUrlDao.updateUrlA(newImgUrlobj);
-			if(effectedNum1<1) {
-				modelMap.put("success", false);
-				modelMap.put("errMsg", "更新imgurl失败");
-			}
-			if(honorImg!=null) {
-				try {
-					imageHolder = new ImageHolder(honorImg.getOriginalFilename(),honorImg.getInputStream());
-					ImageUtil.generateNormalImg(imageHolder, dest,newImgUrl);
-					
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		}
-		
 		return modelMap;
 	}
 }

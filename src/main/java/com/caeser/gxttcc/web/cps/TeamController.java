@@ -53,9 +53,9 @@ public class TeamController {
 		deleteTeamObj=teamDao.queryTeamById(teamId);
 		if(deleteTeamObj!=null) {
 			String teamImgName=deleteTeamObj.getAaa403();
-			teamImgName=teamImgName.substring(7,teamImgName.lastIndexOf("."));
+			teamImgName=teamImgName.substring(PathUtil.filePathInDatabase.length(),teamImgName.length());
 			String dest = PathUtil.getImgBasePath();
-			String relativeAddr = dest + teamImgName + ".jpg";
+			String relativeAddr = dest + teamImgName;
 			ImageUtil.deleteFileOrPath(relativeAddr);
 		}
 		int effectedNum=teamDao.deleteTeamById(teamId);
@@ -76,14 +76,7 @@ public class TeamController {
 		CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver(
 				request.getSession().getServletContext());
 		Team teamItem=new Team();
-		teamItem.setAaa401(teamId);
-		teamItem.setAaa402(teamTitle);
-		teamItem.setAaa404(teamDate);
-		int effectedNum=teamDao.updateTeam(teamItem);
-		if(effectedNum<1) {
-			modelMap.put("success", false);
-			modelMap.put("errMsg", "更新团队一项失败");
-		}
+		
 		if (commonsMultipartResolver.isMultipart(request)) {
 			MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
 			teamImg = (CommonsMultipartFile) multipartHttpServletRequest.getFile("teamFile");
@@ -93,12 +86,20 @@ public class TeamController {
 				ImageHolder imageHolder=new ImageHolder(teamImg.getOriginalFilename(),teamImg.getInputStream());
 				String dest = PathUtil.getImgBasePath();
 				String tmpName=teamDao.queryTeamById(teamId).getAaa403();
-				tmpName=tmpName.substring(7,tmpName.lastIndexOf("."));
+				tmpName=tmpName.substring(PathUtil.filePathInDatabase.length(),tmpName.lastIndexOf("."));
 				ImageUtil.generateNormalImg(imageHolder, dest,tmpName);
 			} catch (IOException e) {
 				modelMap.put("success", false);
 				modelMap.put("errMsg", e.getMessage());
 			}
+		}
+		teamItem.setAaa401(teamId);
+		teamItem.setAaa402(teamTitle);
+		teamItem.setAaa404(teamDate);
+		int effectedNum=teamDao.updateTeam(teamItem);
+		if(effectedNum<1) {
+			modelMap.put("success", false);
+			modelMap.put("errMsg", "更新团队一项失败");
 		}
 		return modelMap;
 	}

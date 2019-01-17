@@ -28,6 +28,8 @@ public class HonorController {
 	@Autowired
 	private HonorDao honorDao;
 	
+	
+	
 	@RequestMapping(value = "/gethonorbyid", method = RequestMethod.GET)
 	@ResponseBody
 	private Map<String, Object> getHonorById(HttpServletRequest request) {
@@ -52,9 +54,9 @@ public class HonorController {
 		honorItem=honorDao.queryHonorById(honorId);
 		if(honorItem!=null) {
 			String honorImgName=honorItem.getAaa503();
-			honorImgName=honorImgName.substring(7,honorImgName.lastIndexOf("."));
+			honorImgName=honorImgName.substring(PathUtil.filePathInDatabase.length(),honorImgName.length());
 			String dest = PathUtil.getImgBasePath();
-			String relativeAddr = dest + honorImgName + ".jpg";
+			String relativeAddr = dest + honorImgName;
 			ImageUtil.deleteFileOrPath(relativeAddr);
 		}
 		int effectedNum=honorDao.deleteHonerById(honorId);
@@ -94,8 +96,8 @@ public class HonorController {
 				ImageHolder imageHolder=new ImageHolder(honorImg.getOriginalFilename(),honorImg.getInputStream());
 				String dest = PathUtil.getImgBasePath();
 				String tmpName=honorDao.queryHonorById(honorId).getAaa503();
-				tmpName=tmpName.substring(7,tmpName.lastIndexOf("."));
-				ImageUtil.generateNormalImg(imageHolder, dest,tmpName);
+				tmpName=tmpName.substring(PathUtil.filePathInDatabase.length(),tmpName.lastIndexOf("."));
+				ImageUtil.copyFile(imageHolder, dest,tmpName);
 			} catch (IOException e) {
 				modelMap.put("success", false);
 				modelMap.put("errMsg", e.getMessage());

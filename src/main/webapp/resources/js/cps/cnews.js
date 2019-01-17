@@ -25,15 +25,7 @@ $(function(){
 			newsObj.map(function(item,data){
 				outHtml2+='<tr><td>'+item.aab101+'</td><td>'+item.aab102+'</td><td>'+item.aab112+'</td><td><a href="/gxttcc/cps/brief?a=4&b=2&c='+item.aab101+'" >删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/gxttcc/cps/brief?b=1&c='+item.aab101+'" >编辑</a></td></tr>';
 			});//
-			$('.ue-clear').html('<a href="/gxttcc/addarticlemodel/addteam?a=1" >新增文章</a><br /><br />'+outHtml1+outHtml2+outHtml3);
+			$('.ue-clear').html('<a href="/gxttcc/cps/caddnewsarticle?a='+id+'" >新增文章</a><br /><br />'+outHtml1+outHtml2+outHtml3);
 		});
-	}
-	function getQueryString(name) {
-		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-		var r = window.location.search.substr(1).match(reg);
-		if (r != null) {
-			return decodeURIComponent(r[2]);
-		}
-		return '';
 	}
 })
