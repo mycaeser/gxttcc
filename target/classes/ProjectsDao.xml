@@ -22,5 +22,12 @@
 		WHERE
 		aab113=#{type}
 	</select>
+	<insert id="insertArticle" useGeneratedKeys="true"
+		keyProperty="Aab101" keyColumn="aab101">
+		INSERT INTO
+		ab01(Aab102,Aab103,Aab104,Aab105,Aab109,Aab110,Aab111,Aab112)
+		VALUES
+		(#{aab102},#{aab103},#{aab104},#{aab105},#{aab109},#{aab110},#{aab111},#{aab112})
+	</insert>
 </mapper>
     

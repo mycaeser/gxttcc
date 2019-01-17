@@ -23,4 +23,10 @@ public interface ProjectsDao {
 	 * @return
 	 */
 	List<Projects> queryIndexTabContentByTypeA(int type);
+	/**
+	 * 添加新文章
+	 * @param projects
+	 * @return
+	 */
+	int insertArticle(Projects projects);
 }
