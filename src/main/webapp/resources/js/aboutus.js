@@ -62,13 +62,15 @@ $(function() {
 		viewHTML=viewHTML+'<div class="cm-page"> <ul id="pgmtt">';
 		var tmph='';
 		var i=0;
+		var j=1;
 		teamList.map(function(item,data){
 			if(i==0){
-				tmph+='<li class="on"><a >'+item.aaa401+'</a></li>';
+				tmph+='<li class="on"><a >'+j+'</a></li>';
 			}else{
-				tmph+='<li ><a href="?a=3&b='+item.aaa401+'">'+item.aaa401+'</a></li>';
+				tmph+='<li ><a href="?a=3&b='+item.aaa401+'">'+j+'</a></li>';
 			}
 			i++;
+			j++;
 		});
 		viewHTML=viewHTML+tmph+'</ul></div>';
 		$('.cm-content').html(viewHTML);

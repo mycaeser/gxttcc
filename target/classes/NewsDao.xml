@@ -24,5 +24,25 @@
 		WHERE
 		aac113=#{type}
 	</select>
+	<select id="queryNewsByPrimId" resultType="com.caeser.gxttcc.entity.News">
+		SELECT  aac102,aac103,aac104,aac105,aac106,aac107,aac108,aac109,aac110,aac111,aac112,aac113,aac115,aac116
+		FROM ac01
+		WHERE
+		aac101=#{id}
+	</select>
+	<update id="updateNewsArticle" parameterType="com.caeser.gxttcc.entity.News">
+		update ac01
+		<set>
+			<if test="aac102 != null">aac102=#{Aac102},</if>
+			<if test="aac103 != null">aac103=#{Aac103},</if>
+			<if test="aac104 != null">aac104=#{Aac104},</if>
+			<if test="aac105 != null">aac105=#{Aac105},</if>
+			<if test="aac109 != null">aac109=#{Aac109},</if>
+			<if test="aac110 != null">aac110=#{Aac110},</if>
+			<if test="aac111 != null">aac111=#{Aac111},</if>
+			<if test="aac112 != null">aac112=#{Aac112}</if>
+		</set>
+		where aac101=#{Aac101}
+	</update>
 </mapper>
     

@@ -5,7 +5,7 @@ import com.caeser.gxttcc.entity.ImgUrl;
 
 public class GetUrlNameUtil {
 	
-	public static  String getUrlName(ImgUrl target) {
+	public static  String getUrlName(ImgUrl target) {//
 		String nm="";
 		String str1="";
 		String str2="";

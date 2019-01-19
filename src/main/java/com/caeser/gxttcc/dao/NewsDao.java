@@ -22,4 +22,16 @@ public interface NewsDao {
 	 * @return
 	 */
 	List<News> queryNewsHR(int type);
+	/**
+	 * 根据主键查询一条工程案例
+	 * @param id
+	 * @return
+	 */
+	News queryNewsByPrimId(int id);
+	/**
+	 * 更新一条工程案例
+	 * @param item
+	 * @return
+	 */
+	int updateNewsArticle(News item);
 }

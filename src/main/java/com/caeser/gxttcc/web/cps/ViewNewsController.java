@@ -72,7 +72,7 @@ public class ViewNewsController {
 		String newImgUrla=GetUrlNameUtil.getUrlName(imgUrl);
 		String newImgUrlb=GetUrlNameUtil.getUrlNameA(newImgUrla);
 		String newImgUrlc=GetUrlNameUtil.getUrlNameA(newImgUrlb);
-		String fileExtension=".jpg";
+		String fileExtension1=".jpg",fileExtension2=".jpg",fileExtension3=".jpg";
 		if (commonsMultipartResolver.isMultipart(request)) {
 			MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
 			itemImga = (CommonsMultipartFile) multipartHttpServletRequest.getFile("clImg1");
@@ -84,18 +84,20 @@ public class ViewNewsController {
 			if(itemImga!=null&&itemImgb!=null&&itemImgc!=null) {
 				try {
 					imageHolder = new ImageHolder(itemImga.getOriginalFilename(),itemImga.getInputStream());
+					fileExtension1=ImageUtil.getFileExtension(imageHolder.getImageName());
 					ImageUtil.copyFile(imageHolder, dest, newImgUrla);
 					imageHolder = new ImageHolder(itemImgb.getOriginalFilename(),itemImgb.getInputStream());
+					fileExtension2=ImageUtil.getFileExtension(imageHolder.getImageName());
 					ImageUtil.copyFile(imageHolder, dest, newImgUrlb);
 					imageHolder = new ImageHolder(itemImgc.getOriginalFilename(),itemImgc.getInputStream());
+					fileExtension3=ImageUtil.getFileExtension(imageHolder.getImageName());
 					ImageUtil.copyFile(imageHolder, dest, newImgUrlc);
-					fileExtension=ImageUtil.getFileExtension(imageHolder.getImageName());
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
-			newImgUrlobj.setImgUrlName(newImgUrlc+fileExtension);
+			newImgUrlobj.setImgUrlName(newImgUrlc+fileExtension1);
 			int effectedNum1=imgUrlDao.updateUrlA(newImgUrlobj);
 			if(effectedNum1<1) {
 				modelMap.put("success", false);
@@ -109,9 +111,9 @@ public class ViewNewsController {
 		projectsItem.setAab105(inputPartc);
 		projectsItem.setAab113(partId);
 		projectsItem.setAab114("1");
-		projectsItem.setAab109(PathUtil.filePathInDatabase+newImgUrla+fileExtension);
-		projectsItem.setAab110(PathUtil.filePathInDatabase+newImgUrlb+fileExtension);
-		projectsItem.setAab111(PathUtil.filePathInDatabase+newImgUrlc+fileExtension);
+		projectsItem.setAab109(PathUtil.filePathInDatabase+newImgUrla+fileExtension1);
+		projectsItem.setAab110(PathUtil.filePathInDatabase+newImgUrlb+fileExtension2);
+		projectsItem.setAab111(PathUtil.filePathInDatabase+newImgUrlc+fileExtension3);
 		int effectedNum=projectsDao.insertArticle(projectsItem);
 		if(effectedNum<1) {
 			modelMap.put("success", false);
