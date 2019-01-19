@@ -18,7 +18,6 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import com.caeser.gxttcc.dao.ImgUrlDao;
 import com.caeser.gxttcc.dao.ProjectsDao;
 import com.caeser.gxttcc.dto.ImageHolder;
-import com.caeser.gxttcc.entity.Honor;
 import com.caeser.gxttcc.entity.ImgUrl;
 import com.caeser.gxttcc.entity.Projects;
 import com.caeser.gxttcc.util.GetUrlNameUtil;
@@ -47,9 +46,17 @@ public class ViewNewsController {
 	private String viewNews() {//跳转到添加新闻资讯模板页面
 		return "tt/cps/addnewsarticle";
 	}
-	@RequestMapping(value = "/addnewsbyid", method = RequestMethod.POST)
+	@RequestMapping(value = "/cdeltecpy", method = RequestMethod.GET)
+	private String cDeleteCpy() {//跳转到添加新闻资讯模板页面
+		return "tt/cps/deletecompany";
+	}
+	@RequestMapping(value = "/cmodcpyarticle", method = RequestMethod.GET)
+	private String cModCpyArticle() {//跳转到修改页面
+		return "tt/cps/newscompanypart/modfiycompany";
+	}
+	@RequestMapping(value = "/addcompanybyid", method = RequestMethod.POST)
 	@ResponseBody
-	private Map<String, Object> addNewsById(HttpServletRequest request) {
+	private Map<String, Object> addCompanyById(HttpServletRequest request) {
 		Map<String, Object> modelMap = new HashMap<String, Object>();
 		String inputTitle= HttpServletRequestUtil.getString(request, "inputTitle");
 		String inputDate= HttpServletRequestUtil.getString(request, "inputDate");
@@ -101,7 +108,7 @@ public class ViewNewsController {
 		projectsItem.setAab104(inputPartb);
 		projectsItem.setAab105(inputPartc);
 		projectsItem.setAab113(partId);
-		projectsItem.setAab113("1");
+		projectsItem.setAab114("1");
 		projectsItem.setAab109(PathUtil.filePathInDatabase+newImgUrla+fileExtension);
 		projectsItem.setAab110(PathUtil.filePathInDatabase+newImgUrlb+fileExtension);
 		projectsItem.setAab111(PathUtil.filePathInDatabase+newImgUrlc+fileExtension);
@@ -109,6 +116,32 @@ public class ViewNewsController {
 		if(effectedNum<1) {
 			modelMap.put("success", false);
 			modelMap.put("errMsg", "添加新的公司动态文章一项失败");
+		}
+		return modelMap;
+	}
+	@RequestMapping(value = "/deletecompanybyid", method = RequestMethod.GET)
+	@ResponseBody
+	private Map<String, Object> deleteById(HttpServletRequest request) {
+		Map<String, Object> modelMap = new HashMap<String, Object>();
+		int companyId = HttpServletRequestUtil.getInt(request, "id");
+		String imgUrla=HttpServletRequestUtil.getString(request, "img1");
+		String imgUrlb=HttpServletRequestUtil.getString(request, "img2");
+		String imgUrlc=HttpServletRequestUtil.getString(request, "img3");
+		int effectedNum=projectsDao.deleteCompanyArticle(companyId);
+		if(effectedNum<1) {
+			modelMap.put("success", false);
+			modelMap.put("errMsg", "删除公司动态文章一项失败");
+		}else {
+			String tmpImgName=imgUrla.substring(PathUtil.filePathInDatabase.length(),imgUrla.length());
+			String dest = PathUtil.getImgBasePath();
+			String relativeAddr = dest + tmpImgName;
+			ImageUtil.deleteFileOrPath(relativeAddr);
+			tmpImgName=imgUrlb.substring(PathUtil.filePathInDatabase.length(),imgUrlb.length());
+			relativeAddr = dest + tmpImgName;
+			ImageUtil.deleteFileOrPath(relativeAddr);
+			tmpImgName=imgUrlc.substring(PathUtil.filePathInDatabase.length(),imgUrlc.length());
+			relativeAddr = dest + tmpImgName;
+			ImageUtil.deleteFileOrPath(relativeAddr);
 		}
 		return modelMap;
 	}

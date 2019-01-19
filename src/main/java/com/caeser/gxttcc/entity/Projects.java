@@ -28,7 +28,7 @@ public class Projects {
 	// 分类
 	private String Aab113;
 	// 是否显示
-	private boolean Aab114;
+	private String Aab114;
 
 	public String getAab106() {
 		return Aab106;
@@ -62,11 +62,11 @@ public class Projects {
 		Aab113 = aab113;
 	}
 
-	public boolean isAab114() {
+	public String getAab114() {
 		return Aab114;
 	}
 
-	public void setAab114(boolean aab114) {
+	public void setAab114(String aab114) {
 		Aab114 = aab114;
 	}
 

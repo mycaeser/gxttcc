@@ -120,7 +120,7 @@ $(function(){
 		$.getJSON(getTeamUrl,function(data){
 			var teamObj=data.teamList;
 			teamObj.map(function(item,data){
-				outHtml2+='<tr><td>'+item.aaa401+'</td><td>'+item.aaa402+'</td><td>'+item.aaa404+'</td><td><a href="/gxttcc/cps/brief?a=4&b=2&c='+item.aaa401+'" >删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/gxttcc/cps/brief?b=1&c='+item.aaa401+'" >编辑</a></td></tr>';
+				outHtml2+='<tr><td>'+item.aaa401+'</td><td>'+item.aaa402+'</td><td>'+item.aaa404+'</td><td><a onclick="return confirm(\'请确认删除\');" href="/gxttcc/cps/brief?a=4&b=2&c='+item.aaa401+'" >删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/gxttcc/cps/brief?b=1&c='+item.aaa401+'" >编辑</a></td></tr>';
 			});//a=4团队管理b=1编辑 b=2删除
 			$('.ue-clear').html('<a href="/gxttcc/addarticlemodel/addteam?a=1" >新增文章</a><br /><br />'+outHtml1+outHtml2+outHtml3);
 			$('.buttons').html('');
@@ -224,7 +224,7 @@ $(function(){
 		$.getJSON(getHonorUrl,function(data){
 			var honorObj=data.honorList;
 			honorObj.map(function(item,data){
-				outHtml2+='<tr><td>'+item.aaa501+'</td><td>'+item.aaa502+'</td><td>'+item.aaa505+'</td><td><a href="/gxttcc/cps/brief?a=5&b=4&c='+item.aaa501+'" >删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/gxttcc/cps/brief?b=3&c='+item.aaa501+'" >编辑</a></td></tr>';
+				outHtml2+='<tr><td>'+item.aaa501+'</td><td>'+item.aaa502+'</td><td>'+item.aaa505+'</td><td><a onclick="return confirm(\'请确认删除\');" href="/gxttcc/cps/brief?a=5&b=4&c='+item.aaa501+'" >删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/gxttcc/cps/brief?b=3&c='+item.aaa501+'" >编辑</a></td></tr>';
 			});//a=5荣誉资质b=3编辑 b=4删除
 			$('.ue-clear').html('<a href="/gxttcc/addarticlemodel/addteam?a=2" >新增文章</a><br /><br />'+outHtml1+outHtml2+outHtml3);
 			$('.buttons').html('');

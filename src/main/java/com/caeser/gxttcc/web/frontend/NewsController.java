@@ -23,14 +23,17 @@ public class NewsController {
 	private ProjectsDao projectsDao;
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	private String index() {
+	private String index() {//新闻资讯
 		return "tt/news";
 	}
 	@RequestMapping(value = "/joinus", method = RequestMethod.GET)
-	private String joinUs() {
+	private String joinUs() {//联系我们
 		return "tt/joinus";
 	}
 
+	/*
+	 * 通过aab113查询四类新闻资讯----（公司动态1，行业新闻2，通信知识3，企业公告4）
+	 */
 	@RequestMapping(value = "/getnews", method = RequestMethod.GET)
 	@ResponseBody
 	private Map<String, Object> getNews(HttpServletRequest request) {
@@ -45,5 +48,21 @@ public class NewsController {
 		}
 		return modelMap;
 	}
-
+	/*
+	 * 通过aab113查询四类新闻资讯----（公司动态1，行业新闻2，通信知识3，企业公告4）
+	 */
+	@RequestMapping(value = "/getonearticlebyprimkey", method = RequestMethod.GET)
+	@ResponseBody
+	private Map<String, Object> getOneArticleByprimKey(HttpServletRequest request) {
+		Map<String, Object> modelMap = new HashMap<String, Object>();
+		if (request.getParameter("id") != null) {
+			int id = Integer.parseInt(request.getParameter("id"));
+			Projects projectsItem = projectsDao.queryOneArticleByprimKey(id);
+			modelMap.put("projectsItem", projectsItem);
+		} else {
+			modelMap.put("success", false);
+			modelMap.put("errMsg", "getnews error");
+		}
+		return modelMap;
+	}
 }

@@ -3,7 +3,8 @@
  */
 $(function(){
 	///gxttcc/cps/viewparta?a=1
-	var addNewArticleUrl='/gxttcc/cps/addnewsbyid';
+	var addNewArticleUrl='/gxttcc/cps/addcompanybyid';
+	var deleteArticleUrl='/gxttcc/cps/deletecompanybyid';
 	var ma=getQueryString('a');
 	if(ma!=null){
 		$('.btn-return').click(function(){//给返回按钮加上ID

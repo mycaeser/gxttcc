@@ -4,6 +4,7 @@
 $(function(){
 	var ma=getQueryString('a');
 	var getNewUrl='/gxttcc/newstt/getnews?typeid=';
+	var deleteCompanyArticleUrl='/gxttcc/cps/deletecompanybyid';
 	if(ma!=null&&ma==1){//显示公司动态
 		viewNewsById(1);	
 	}
@@ -23,7 +24,7 @@ $(function(){
 		$.getJSON(getNewUrl+id,function(data){
 			var newsObj=data.projectsList;
 			newsObj.map(function(item,data){
-				outHtml2+='<tr><td>'+item.aab101+'</td><td>'+item.aab102+'</td><td>'+item.aab112+'</td><td><a href="/gxttcc/cps/brief?a=4&b=2&c='+item.aab101+'" >删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/gxttcc/cps/brief?b=1&c='+item.aab101+'" >编辑</a></td></tr>';
+				outHtml2+='<tr><td>'+item.aab101+'</td><td>'+item.aab102+'</td><td>'+item.aab112+'</td><td><a onclick="return confirm(\'请确认删除\');" href="/gxttcc/cps/cdeltecpy?type='+item.aab113+'&id='+item.aab101+'&img1='+item.aab109+'&img2='+item.aab110+'&img3='+item.aab111+'" >删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/gxttcc/cps/cmodcpyarticle?b='+id+'&c='+item.aab101+'" >编辑</a></td></tr>';
 			});//
 			$('.ue-clear').html('<a href="/gxttcc/cps/caddnewsarticle?a='+id+'" >新增文章</a><br /><br />'+outHtml1+outHtml2+outHtml3);
 		});

@@ -25,9 +25,34 @@
 	<insert id="insertArticle" useGeneratedKeys="true"
 		keyProperty="Aab101" keyColumn="aab101">
 		INSERT INTO
-		ab01(Aab102,Aab103,Aab104,Aab105,Aab109,Aab110,Aab111,Aab112)
+		ab01(Aab102,Aab103,Aab104,Aab105,Aab109,Aab110,Aab111,Aab112,Aab113,Aab114)
 		VALUES
-		(#{aab102},#{aab103},#{aab104},#{aab105},#{aab109},#{aab110},#{aab111},#{aab112})
+		(#{aab102},#{aab103},#{aab104},#{aab105},#{aab109},#{aab110},#{aab111},#{aab112},#{aab113},#{aab114})
 	</insert>
+	<delete id="deleteCompanyArticle" parameterType="int">
+		DELETE FROM
+		ab01
+		WHERE aab101=#{id}
+	</delete>
+	<select id="queryOneArticleByprimKey" resultType="com.caeser.gxttcc.entity.Projects">
+		SELECT  aab101,aab102,aab103,aab104,aab105,aab106,aab107,aab108,aab109,aab110,aab111,aab112,aab113,aab114
+		FROM ab01
+		WHERE
+		aab101=#{id}
+	</select>
+	<update id="updateOneArticleByprimKey" parameterType="com.caeser.gxttcc.entity.Projects">
+		update ab01
+		<set>
+			<if test="aab102 != null">aab102=#{Aab102},</if>
+			<if test="aab103 != null">aab103=#{Aab103},</if>
+			<if test="aab104 != null">aab104=#{Aab104},</if>
+			<if test="aab105 != null">aab105=#{Aab105},</if>
+			<if test="aab109 != null">aab109=#{Aab109},</if>
+			<if test="aab110 != null">aab110=#{Aab110},</if>
+			<if test="aab111 != null">aab111=#{Aab111},</if>
+			<if test="aab112 != null">aab112=#{Aab112}</if>
+		</set>
+		where aab101=#{Aab101}
+	</update>
 </mapper>
     

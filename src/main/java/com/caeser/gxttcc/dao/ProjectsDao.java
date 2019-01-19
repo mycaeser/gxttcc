@@ -29,4 +29,22 @@ public interface ProjectsDao {
 	 * @return
 	 */
 	int insertArticle(Projects projects);
+	/**
+	 * 删除一篇文章
+	 * @param id
+	 * @return
+	 */
+	int deleteCompanyArticle(int id);
+	/**
+	 * 通过主键来查询一条文章
+	 * @param id
+	 * @return
+	 */
+	Projects queryOneArticleByprimKey(int id);
+	/**
+	 * 更新公司动态一篇文章
+	 * @param item
+	 * @return
+	 */
+	int updateOneArticleByprimKey(Projects item);
 }
