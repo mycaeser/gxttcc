@@ -13,4 +13,15 @@
 		FROM tt_address
 		WHERE add_id >3
 	</select>
+	<update id="updateAddress" parameterType="com.caeser.gxttcc.entity.Address">
+		update tt_address
+		<set>
+			<if test="addName != null">add_name=#{addName},</if>
+			<if test="addContent != null">add_content=#{addContent},</if>
+			<if test="addPhoneOwner != null">add_phone_owner=#{addPhoneOwner},</if>
+			<if test="addPhoneNumber != null">add_phone_number=#{addPhoneNumber},</if>
+			<if test="addEmail != null">add_email=#{addEmail}</if>
+		</set>
+		where add_id=#{addId}
+	</update>
 </mapper>   

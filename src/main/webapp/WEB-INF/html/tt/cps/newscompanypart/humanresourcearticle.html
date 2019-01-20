@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" type="text/css"
+	href="../resources/cps/css/style.css" />
+<script type="text/javascript"
+	src="../resources/lib/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../resources/cps/js/WdatePicker.js"></script>
+<script type="text/javascript" src="../resources/js/common/commget.js"></script>
+<title id="ca-titile">修改一篇文章</title>
+<style type="text/css">
+.ca-fix {
+	padding: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+	<div id="container">
+		<div id="hd"></div>
+		<div id="bd">
+			<div id="main" class="ca-fix">
+				<div class="subfild-content remarkes-info">
+					<div class="kv-item ue-clear">
+
+						
+						<p>标题</p>
+						<input id="cl-title" type="text" style="width: 510px;" value="" />
+						<p>日期</p>
+						<input type="text" style="width: 510px" id="cl-date"
+							onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" value="" /><br />
+						<textarea id="content1" style="width: 510px; height: 240px;"></textarea>
+						<br />
+						<textarea id="content2" style="width: 510px; height: 240px;"></textarea>
+						<br />
+						<textarea id="content3" style="width: 510px; height: 240px;"></textarea>
+						<table border="3">
+							<tr>
+								<th>编号</th>
+								<th>图片</th>
+								<th>编辑</th>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td><img style="width: 100px; height: 100px;" id="view-img1" src="" /></td>
+								<td><input id="cl-imgf1" type="file" /></td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td><img style="width: 100px; height: 100px;" id="view-img2" src="" /></td>
+								<td><input id="cl-imgf2" type="file" /></td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td><img style="width: 100px; height: 100px;" id="view-img3" src="" /></td>
+								<td><input id="cl-imgf3" type="file" /></td>
+							</tr>
+						</table>
+					</div>
+
+
+				</div>
+
+			
+					<input class="button cabtn" type="button" value="确认添加" />
+			
+					<input class="button btn-return" type="button" value="返回" />
+			
+
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript"
+		src="../resources/js/cps/addhrarticle.js"></script>
+</body>
+</html>
+

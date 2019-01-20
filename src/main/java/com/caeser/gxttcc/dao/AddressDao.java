@@ -16,4 +16,10 @@ public interface AddressDao {
 	 * @return
 	 */
 	List<Address> queryAddot();
+	/**
+	 * 更新一条地址信息
+	 * @param item
+	 * @return
+	 */
+	int updateAddress(Address item);
 }

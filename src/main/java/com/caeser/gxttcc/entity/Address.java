@@ -7,6 +7,8 @@ public class Address {
 	private String addPhoneOwner;
 	private String addPhoneNumber;
 	private String addEmail;
+	
+	
 	public Integer getAddId() {
 		return addId;
 	}

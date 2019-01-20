@@ -90,7 +90,12 @@ public class AddProjectsController {
 		String inputParta= HttpServletRequestUtil.getString(request, "inputParta");
 		String inputPartb= HttpServletRequestUtil.getString(request, "inputPartb");
 		String inputPartc= HttpServletRequestUtil.getString(request, "inputPartc");
+		boolean hrOrProjects=true;
 		int typeId=HttpServletRequestUtil.getInt(request, "typeId");
+		int hrTypeId=HttpServletRequestUtil.getInt(request, "hrTypeId");
+		if(hrTypeId==2) {//如果是添加HR文章
+			hrOrProjects=false;
+		}
 		CommonsMultipartFile itemImga=null,itemImgb=null,itemImgc=null;
 		CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver(
 				request.getSession().getServletContext());
@@ -136,13 +141,18 @@ public class AddProjectsController {
 		newsItem.setAac103(inputParta);
 		newsItem.setAac104(inputPartb);
 		newsItem.setAac105(inputPartc);
-		newsItem.setAac115(typeId);
-		//这里根据分类的编号设置的枚举类型是提前写好的，不会随数据库里的改变
-		newsItem.setAac116(ProjectsTypeEnum.stateOf(typeId).getStateInfo());
 		newsItem.setAac109(PathUtil.filePathInDatabase+newImgUrla+fileExtension1);
 		newsItem.setAac110(PathUtil.filePathInDatabase+newImgUrlb+fileExtension2);
 		newsItem.setAac111(PathUtil.filePathInDatabase+newImgUrlc+fileExtension3);
-		newsItem.setAac113(1);//工程案例1 招聘信息2
+		if(hrOrProjects) {
+			newsItem.setAac113(1);//工程案例1 招聘信息2
+			newsItem.setAac115(typeId);
+			//这里根据分类的编号设置的枚举类型是提前写好的，不会随数据库里的改变
+			newsItem.setAac116(ProjectsTypeEnum.stateOf(typeId).getStateInfo());
+		}else {
+			newsItem.setAac113(2);
+		}
+		
 		int effectedNum=projectsTypeDao.insertOneProjects(newsItem);
 		if(effectedNum<1) {
 			modelMap.put("success", false);

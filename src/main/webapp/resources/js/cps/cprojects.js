@@ -28,7 +28,7 @@ $(function(){
 		$.getJSON(getProjectsUrl+id,function(data){
 			var newsObj=data.newsList;
 			newsObj.map(function(item,data){
-				outHtml2+='<tr><td>'+item.aac101+'</td><td>'+item.aac102+'</td><td>'+item.aac116+'</td><td>'+item.aac112+'</td><td><a onclick="return confirm(\'请确认删除\');" href="/gxttcc/addprojectsarticle/delpjtone?id='+item.aac101+'&img1='+item.aac109+'&img2='+item.aac110+'&img3='+item.aac111+'" >删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/gxttcc/addprojectsarticle/modpjtoneview?a='+item.aac101+'" >编辑</a></td></tr>';
+				outHtml2+='<tr><td>'+item.aac101+'</td><td>'+item.aac102+'</td><td>'+item.aac116+'</td><td>'+item.aac112+'</td><td><a onclick="return confirm(\'请确认删除\');" href="/gxttcc/addprojectsarticle/delpjtone?tohr=1&id='+item.aac101+'&img1='+item.aac109+'&img2='+item.aac110+'&img3='+item.aac111+'" >删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/gxttcc/addprojectsarticle/modpjtoneview?a='+item.aac101+'" >编辑</a></td></tr>';
 			});//
 			$('.ue-clear').html(outHtml1+outHtml2+outHtml3);
 		});

@@ -12,4 +12,8 @@ public class HrController {
 	private String admin() {// 显示hr主页
 		return "tt/cps/chr";
 	}
+	@RequestMapping(value = "/addhrarticleview", method = RequestMethod.GET)
+	private String addHrArticleView() {// 显示添加一篇hr文章
+		return "tt/cps/newscompanypart/humanresourcearticle";
+	}
 }
