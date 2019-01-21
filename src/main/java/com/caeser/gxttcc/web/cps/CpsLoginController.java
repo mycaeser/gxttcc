@@ -30,7 +30,7 @@ public class CpsLoginController {
 		// 获取输入的帐号
 		String userName = HttpServletRequestUtil.getString(request, "userName");
 		// 获取输入的密码
-		String password = HttpServletRequestUtil.getString(request, "passWord");
+		String password = HttpServletRequestUtil.getString(request, "password");
 		// 非空校验
 		if (userName != null && password != null) {
 			// 传入帐号和密码去获取平台帐号信息

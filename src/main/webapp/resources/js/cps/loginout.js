@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+$(function(){
+	$('.exit').click(function(){
+		$.getJSON('/gxttcc/local/logout');
+		self.location='/gxttcc/vlogin/login';
+	})
+})

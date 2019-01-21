@@ -1,6 +1,8 @@
 package com.caeser.gxttcc.dao;
 
 
+import org.apache.ibatis.annotations.Param;
+
 import com.caeser.gxttcc.entity.LocalAuth;
 
 public interface LocalAuthDao {
@@ -11,5 +13,5 @@ public interface LocalAuthDao {
 	 * @param password
 	 * @return
 	 */
-	LocalAuth queryLocalByUserNameAndPwd(String username,  String password);
+	LocalAuth queryLocalByUserNameAndPwd(@Param("username")String username,@Param("password")  String password);
 }
