@@ -1,11 +1,17 @@
 package com.caeser.gxttcc.entity;
 
 public class Address {
+	//地址主键
 	private Integer addId;
+	//地址名称
 	private String addName;
+	//具体地址描述
 	private String addContent;
+	//联系人姓名
 	private String addPhoneOwner;
+	//联系人电话号码
 	private String addPhoneNumber;
+	//联系人邮箱
 	private String addEmail;
 	
 	

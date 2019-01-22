@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.caeser.gxttcc.dao.LocalAuthDao;
 import com.caeser.gxttcc.entity.LocalAuth;
 import com.caeser.gxttcc.util.HttpServletRequestUtil;
+import com.caeser.gxttcc.util.MD5;
 
 
 @Controller
@@ -34,7 +35,7 @@ public class CpsLoginController {
 		// 非空校验
 		if (userName != null && password != null) {
 			// 传入帐号和密码去获取平台帐号信息
-			LocalAuth localAuth = localAuthDao.queryLocalByUserNameAndPwd(userName, password);
+			LocalAuth localAuth = localAuthDao.queryLocalByUserNameAndPwd(userName, MD5.getMd5(password));
 			if (localAuth != null) {
 				// 若能取到帐号信息则登录成功
 				modelMap.put("success", true);

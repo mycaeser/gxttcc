@@ -3,7 +3,7 @@ package com.caeser.gxttcc.dto;
 import java.io.InputStream;
 
 public class ImageHolder {
-
+	/** 保存图片流，其中用到了文件名（包括 扩展名）和文件 **/
 	private String imageName;
 	private InputStream image;
 

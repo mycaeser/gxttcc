@@ -12,7 +12,6 @@ $(function(){
 	aboutMenuType('',2);
 	detailType('','',2);
 	function aboutMenuType(clickType,whichID){
-		//$(clickType).click(function(){
 			$.getJSON(getProjectsUrl+whichID,function(data){
 				getMenuA=data.newsList;
 				var viewHTML='<ul class="cm-new-list-ul">';
@@ -38,7 +37,6 @@ $(function(){
 				}
 				$('.cm-content').html(viewHTML+viewHTMLm+'</ul>'+viewHTMLpage+pageTMP+'</ul></div>');
 			});
-		//});
 	}
 	function detailType(classOnStr,localStr,whichID){
 		if(ma==whichID&&mb!=null){
@@ -47,8 +45,6 @@ $(function(){
 			var IDi=0;
 			$.getJSON(getProjectsUrl+whichID,function(data){
 				getMenuB=data.newsList;
-				//$(classOnStr).addClass('on');
-				//$('#location-c').html(localStr);
 				getMenuB.map(function(item,date){
 					getIDarr[IDi]=item.aac101;
 					IDi++;

@@ -1,6 +1,7 @@
 package com.caeser.gxttcc.entity;
 
 public class ImgUrl {
+	//图片地址字符串
 	private Integer ImgId;
 	private String ImgUrlName;
 

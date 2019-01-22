@@ -19,7 +19,6 @@ $(function() {
 	});
 	var urlToresource='/';
 	var tabName='.int';
-	
 	$.getJSON(getTabUrl+1,function(data){
 		var imgUrl=data.tabUrl;
 		$('.int1').html('<img src="'+urlToresource+imgUrl+'" />');
@@ -37,6 +36,7 @@ $(function() {
 		$('.int4').html('<img src="'+urlToresource+imgUrl+'" />');
 	});
 	var contentName=new Array('.int11','.int21','.int31','.int41');
+	//公司动态
 	$.getJSON(getTabContent+1,function(data){
 		var viewhtml='';
 		for(var i=0;i<data.projectsList.length;i++){
@@ -53,6 +53,7 @@ $(function() {
 		}
 		$('.int11').children('ul').html(viewhtml);
 	});
+	//行业新闻
 	$.getJSON(getTabContent+2,function(data){
 		var viewhtml='';
 		for(var i=0;i<data.projectsList.length;i++){
@@ -60,6 +61,7 @@ $(function() {
 			var title=data.projectsList[i].aab102;
 			var datet=data.projectsList[i].aab112;
 			var ifview=data.projectsList[i].aab114;
+			//如果aab114为0表示不显示在页面上
 			if(ifview==0)
 				continue;
 			viewhtml=viewhtml+'<li><a href="/gxttcc/newstt/index?a=2&b='+
@@ -72,6 +74,7 @@ $(function() {
 		}
 		$('.int21').children('ul').html(viewhtml);
 	});
+	//通信知识
 	$.getJSON(getTabContent+3,function(data){
 		var viewhtml='';
 		for(var i=0;i<data.projectsList.length;i++){
@@ -79,6 +82,7 @@ $(function() {
 			var title=data.projectsList[i].aab102;
 			var datet=data.projectsList[i].aab112;
 			var ifview=data.projectsList[i].aab114;
+			//如果aab114为0表示不显示在页面上
 			if(ifview==0)
 				continue;
 			viewhtml=viewhtml+'<li><a href="/gxttcc/newstt/index?a=3&b='+
@@ -91,6 +95,7 @@ $(function() {
 		}
 		$('.int31').children('ul').html(viewhtml);
 	});
+	//企业公告
 	$.getJSON(getTabContent+4,function(data){
 		var viewhtml='';
 		for(var i=0;i<data.projectsList.length;i++){
@@ -98,6 +103,7 @@ $(function() {
 			var title=data.projectsList[i].aab102;
 			var datet=data.projectsList[i].aab112;
 			var ifview=data.projectsList[i].aab114;
+			//如果aab114为0表示不显示在页面上
 			if(ifview==0)
 				continue;
 			viewhtml=viewhtml+'<li><a href="/gxttcc/newstt/index?a=4&b='+
@@ -110,6 +116,7 @@ $(function() {
 		}
 		$('.int41').children('ul').html(viewhtml);
 	});
+	//荣誉资质
 	$.getJSON(getHonorUrl,function(data){
 		var honorList=data.honorList;
 		var viewHTML='';
@@ -119,6 +126,7 @@ $(function() {
 		});
 		$('.honortt').children('.am-viewport').children('ul').html(viewHTML);
 	});
+	//案例细读
 	$.getJSON(getBottomUrl+1,function(data){
 		var bottoma=data.newsList;
 		var viewHTML='';
@@ -131,6 +139,7 @@ $(function() {
 		});
 		$('#botta').children('ul').html(viewHTML);
 	});
+	//阅读精选
 	$.getJSON(getBottomUrl+2,function(data){
 		var bottoma=data.newsList;
 		var viewHTML='';

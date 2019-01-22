@@ -93,7 +93,7 @@ public class ImageUtil {
 	 * @return
 	 */
 	public static  String generateNormalImg(ImageHolder thumbnail, String targetAddr,String fileName) {
-
+		//默认保存.jpg 并且加入水印
 		// 获取文件的扩展名如png,jpg等
 		//String extension = getFileExtension(thumbnail.getImageName());
 		String extension = ".jpg";

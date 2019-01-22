@@ -2,10 +2,15 @@
  * 
  */
 $(function() {
+	//获得所有关于页面的内容
 	var getAboutAllUrl='/gxttcc/companygx/getaboutall';
+	//单独获得荣誉资质
 	var getHonorListUrl='/gxttcc/companygx/gethonorlist';
+	//单独获得团队管理
 	var getTeamListUrl='/gxttcc/companygx/getteamlist';
+	//单独获得企业文化
 	var getCulture='/gxttcc/companygx/getculture';
+	//图片URL修正
 	var imgUrlfix='/';
 	var MAX_COUNT_ITEM=8;
 	var aboutUs={};
@@ -21,6 +26,7 @@ $(function() {
 	$('#about-menu-a').click();
 	var leftMenuId=getQueryString('a');
 	if(leftMenuId!=null){
+		//更新当前位置的显示
 		if(leftMenuId==1){
 			$('#about-menu-a').addClass('on');
 			$('#location-a').html('企业简介');
@@ -63,22 +69,27 @@ $(function() {
 		var tmph='';
 		var i=0;
 		var j=1;
+		//遍历团队管理对象
 		teamList.map(function(item,data){
 			if(i==0){
+				//首页页码
 				tmph+='<li class="on"><a >'+j+'</a></li>';
 			}else{
-				tmph+='<li ><a href="?a=3&b='+item.aaa401+'">'+j+'</a></li>';
+				//1以后的页码，在数据里的主键可能因为删除过而不一致
+				tmph+='<li ><a href="?a=3&b='+item.aaa401+'">'+item.aaa401+'</a></li>';
 			}
 			i++;
 			j++;
 		});
 		viewHTML=viewHTML+tmph+'</ul></div>';
 		$('.cm-content').html(viewHTML);
+		//相应页码点击事件
 		$('#pgmtt li').click(function(data){
 			var whichid=$(this).text();
 			var viewHTMLa='';
 			tmph='';
 			teamList.map(function(item,data){
+				//传参a=3表示是管理团队模块，b=1代表主键为1的内容
 				if(item.aaa401==whichid){
 					viewHTMLa='<div class="prodoct-list" > <div class="am-u-sm-6 am-u-md-6 am-u-lg-3"> <a > <img src="'+imgUrlfix+item.aaa403+'"> <span class="f-toe">'+item.aaa404+'</span></a></div><div class="am-u-sm-6 am-u-md-6"><p>'+item.aaa402+'</p></div></div>';	
 				}	
@@ -92,12 +103,14 @@ $(function() {
 	var mb=getQueryString('b');
 	
 	if(ma==3&&mb!=null){
+		//响应翻页
 		var tmph1='';
 		var viewHTMLb='';
 		var teamList1={};
 		$.getJSON(getTeamListUrl,function(data){
 			teamList1=data.teamList;
 			teamList1.map(function(item,data){
+				//找到对应的页码并显示
 				if(item.aaa401==mb){
 					tmph1+='<li class="on"><a href="?a=3&b='+item.aaa401+'">'+item.aaa401+'</a></li>';
 					viewHTMLb='<div class="prodoct-list" > <div class="am-u-sm-6 am-u-md-6 am-u-lg-3"> <a > <img src="'+imgUrlfix+item.aaa403+'"> <span class="f-toe">'+item.aaa404+'</span></a></div><div class="am-u-sm-6 am-u-md-6"><p>'+item.aaa402+'</p></div></div>';	
@@ -115,8 +128,6 @@ $(function() {
 		removeClassOnAll();
 		$('#about-menu-d').addClass('on');
 		$('#location-a').html('荣誉资质');
-		//var viewHTML='<img src="'+imgUrlfix+aboutUs.aaa204+'" style="height:800px;">';
-		//$('.cm-content').html(aboutUs.aaa202+viewHTML);
 		var viewHTML='<ul class="cm-new-list-ul">';
 		var viewHTMLm='';
 		var viewHTMLpage='<div class="cm-page"><ul class="honor-detail-tt">';
@@ -128,9 +139,12 @@ $(function() {
 			}
 			i++;
 		});
+		//获取当前荣誉资质数量
 		var count=honorList.length;
+		//根据数量分页 一页有8个，返回有多少页
 		var pageNum=Math.ceil(count/MAX_COUNT_ITEM);
 		for(var a=0;a<pageNum;a++){
+			//显示当前页，a=4表示当前模块为荣誉资质b表示主键ID
 			if(a==0){
 				pageTMP+='<li class="on"><a href="?a=4&pg=1">1</a></li>';
 			}else{
@@ -225,6 +239,7 @@ $(function() {
 		$('.cm-content').html(viewHTML);
 	});
 	function removeClassOnAll(){
+		//移除所有的点击背景变蓝效果
 		$('#about-menu-a').removeClass('on');
 		$('#about-menu-b').removeClass('on');
 		$('#about-menu-c').removeClass('on');

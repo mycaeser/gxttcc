@@ -1,7 +1,7 @@
 package com.caeser.gxttcc.entity;
 
 public class EngineeringClassification {
-	//名称
+	//工程分类名称
 	private String Aac302;
 	//ID
 	private int Aac301;

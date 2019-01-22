@@ -34,10 +34,11 @@ public class AboutPageController {
 	private HonorDao honorDao;
 	
 	@RequestMapping(value="/index",method=RequestMethod.GET)
-	private String index(){
+	private String index(){//返回关于页面
 		return "tt/about";
 	}
 	
+	/** 返回全部关于内容，包括企业简介、企业文化、管理团队、荣誉资质、组织架构、合作伙伴 **/
 	@RequestMapping(value="/getaboutall",method=RequestMethod.GET)
 	@ResponseBody
 	private Map<String,Object> getAboutAll(HttpServletRequest request){
@@ -57,6 +58,7 @@ public class AboutPageController {
 		}
 		return modelMap;
 	}
+	//单独获得荣誉资质
 	@RequestMapping(value="/gethonorlist",method=RequestMethod.GET)
 	@ResponseBody
 	private Map<String,Object> getHonorList(HttpServletRequest request){

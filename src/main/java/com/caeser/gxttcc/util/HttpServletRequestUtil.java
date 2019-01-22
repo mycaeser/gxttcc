@@ -3,6 +3,7 @@ package com.caeser.gxttcc.util;
 import javax.servlet.http.HttpServletRequest;
 
 public class HttpServletRequestUtil {
+	/** 根据前端传过来信息获取指定key的value **/
 	public static int getInt(HttpServletRequest request,String key) {
 		try {
 			return Integer.decode(request.getParameter(key));

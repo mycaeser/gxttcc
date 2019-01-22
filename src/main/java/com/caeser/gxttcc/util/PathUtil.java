@@ -3,7 +3,8 @@ package com.caeser.gxttcc.util;
 public class PathUtil {
 	private static String seperator = System.getProperty("file.separator");
 	public static String filePathInDatabase="images/";
-
+	
+	//返回当前文件的绝对路径
 	public static String getImgBasePath() {
 
 		String os = System.getProperty("os.name");

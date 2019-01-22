@@ -4,8 +4,8 @@ import com.caeser.gxttcc.entity.ImgUrl;
 
 
 public class GetUrlNameUtil {
-	
-	public static  String getUrlName(ImgUrl target) {//
+	/** 根据传来的文件流获取下一个图片名称名称，例如taitongjj361.jpg将获得taitongjj362.jpg **/
+	public static  String getUrlName(ImgUrl target) {
 		String nm="";
 		String str1="";
 		String str2="";
@@ -24,6 +24,7 @@ public class GetUrlNameUtil {
 		tmpint++;
 		return str2+tmpint;
 	}
+	/** 根据传来的文件名的字符串，取下一个图片名称名称，例如taitongjj361.jpg将获得taitongjj362.jpg **/
 	public static  String getUrlNameA(String target) {
 		String nm="";
 		String str1="";

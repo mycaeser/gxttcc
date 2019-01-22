@@ -38,15 +38,15 @@ public class AddProjectsController {
 	private NewsDao newsDao;
 	
 	@RequestMapping(value = "/delpjtone", method = RequestMethod.GET)
-	private String delPjtOne() {// 显示主页
+	private String delPjtOne() {// 跳转到删除一条工程案例的页面
 		return "tt/cps/newscompanypart/deleteprojectsone";
 	}
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	private String admin() {// 显示主页
+	private String admin() {// 跳转到添加文章页面
 		return "tt/cps/addarticle";
 	}
 	@RequestMapping(value = "/modpjtoneview", method = RequestMethod.GET)
-	private String modPjtOneView() {// 显示主页
+	private String modPjtOneView() {// 修改工程案例页面
 		return "tt/cps/newscompanypart/modprojectsone";
 	}
 	@RequestMapping(value = "/getonepjtbyprimid", method = RequestMethod.GET)
@@ -59,7 +59,7 @@ public class AddProjectsController {
 		return modelMap;
 	}
 	@RequestMapping(value = "/delpjtarticle", method = RequestMethod.GET)
-	private void delPjtArticle(HttpServletRequest request) {// 显示主页
+	private void delPjtArticle(HttpServletRequest request) {//删除一条案例文章（由于前段使用的a标签使用使用GET
 		int typeId=HttpServletRequestUtil.getInt(request, "id");
 		String imgName1=HttpServletRequestUtil.getString(request, "img1");
 		imgName1=imgName1.substring(PathUtil.filePathInDatabase.length(),imgName1.length());
@@ -85,6 +85,7 @@ public class AddProjectsController {
 	@ResponseBody
 	private Map<String, Object> addPjtNewArticle(HttpServletRequest request) {
 		Map<String, Object> modelMap = new HashMap<String, Object>();
+		/** 获取前端传来的标题，日期，第一，二，三段文本 **/
 		String inputTitle= HttpServletRequestUtil.getString(request, "inputTitle");
 		String inputDate= HttpServletRequestUtil.getString(request, "inputDate");
 		String inputParta= HttpServletRequestUtil.getString(request, "inputParta");
@@ -124,17 +125,18 @@ public class AddProjectsController {
 					imageHolder = new ImageHolder(itemImgc.getOriginalFilename(),itemImgc.getInputStream());
 					fileExtension3=ImageUtil.getFileExtension(imageHolder.getImageName());
 					ImageUtil.copyFile(imageHolder, dest, newImgUrlc);
+					newImgUrlobj.setImgUrlName(newImgUrlc+fileExtension1);
+					int effectedNum1=imgUrlDao.updateUrlA(newImgUrlobj);
+					if(effectedNum1<1) {
+						modelMap.put("success", false);
+						modelMap.put("errMsg", "更新imgurl失败");
+					}
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
-			newImgUrlobj.setImgUrlName(newImgUrlc+fileExtension1);
-			int effectedNum1=imgUrlDao.updateUrlA(newImgUrlobj);
-			if(effectedNum1<1) {
-				modelMap.put("success", false);
-				modelMap.put("errMsg", "更新imgurl失败");
-			}
+			
 		}
 		newsItem.setAac102(inputTitle);
 		newsItem.setAac112(inputDate);

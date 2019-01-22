@@ -1,8 +1,11 @@
 package com.caeser.gxttcc.entity;
 
 public class LocalAuth {
+	//登陆账号主键
 	private String Aac201;
+	//登陆账号
 	private String Aac202;
+	//登陆密码
 	private String Aac203;
 	
 	public String getAac201() {

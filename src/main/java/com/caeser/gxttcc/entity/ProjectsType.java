@@ -1,8 +1,11 @@
 package com.caeser.gxttcc.entity;
 
 public class ProjectsType {
+	//工程分类主键
 	private String Aac301;
+	//名称
 	private String Aac302;
+	//保留字段-原功能表示是否显示
 	private String Aac303;
 	public String getAac301() {
 		return Aac301;
