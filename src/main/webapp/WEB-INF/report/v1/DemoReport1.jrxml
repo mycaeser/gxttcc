@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DemoReport1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="04f269f0-1c49-4564-95c0-c4a72d068732">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="title" class="java.lang.String"/>
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="age" class="java.lang.String"/>
+	<parameter name="dept" class="java.lang.String"/>
+	<parameter name="gender" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="add_name" class="java.lang.String"/>
+	<field name="add_content" class="java.lang.String"/>
+	<field name="add_phone_owner" class="java.lang.String"/>
+	<field name="add_phone_number" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="107" splitType="Stretch">
+			<staticText>
+				<reportElement x="172" y="20" width="210" height="40" uuid="4f5221b5-0a1f-4157-be4d-309855b9d520"/>
+				<textElement textAlignment="Center">
+					<font fontName="华文宋体" size="24"/>
+				</textElement>
+				<text><![CDATA[测试]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="87" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="62" splitType="Stretch">
+			<staticText>
+				<reportElement x="451" y="0" width="100" height="30" uuid="9e4890d9-a6c6-4314-ba2e-68c0e5c5e953">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7e6b3e75-3043-43b2-9fa7-39314f1faa63"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[add_phone_number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="10" width="100" height="30" uuid="35fc4fe4-fa1e-42cf-b79e-dcc1082aa69e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4333b716-1a15-4d3d-a731-900574115ad8"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[add_phone_owner]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="196" y="0" width="100" height="30" uuid="6b216db7-8a01-4666-adcc-2e8574c2eeec">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f36b18e7-4bb6-4db4-aa29-f51526274142"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[add_content]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="84" y="0" width="100" height="30" uuid="f291df14-95f0-4a59-b183-ad8b2b0d9609">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ffc3b6fc-6a58-4449-9081-c3b7466b6d73"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[aaaa]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="129" splitType="Stretch">
+			<textField>
+				<reportElement x="451" y="75" width="100" height="30" uuid="ccd28536-1bac-4559-81b9-def2eea8d864">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7e6b3e75-3043-43b2-9fa7-39314f1faa63"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{add_phone_number}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="75" width="100" height="30" uuid="b02eb7d7-5d3c-4951-a4d8-2d7970e5f437">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4333b716-1a15-4d3d-a731-900574115ad8"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{add_phone_owner}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="196" y="80" width="100" height="30" uuid="0521c1a5-f4e5-4d1e-a387-1d6fdb20e54c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f36b18e7-4bb6-4db4-aa29-f51526274142"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{add_content}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="" stretchType="RelativeToTallestObject" x="84" y="67" width="100" height="30" uuid="62ab2642-aec9-4778-8dda-e9af84a96cda">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ffc3b6fc-6a58-4449-9081-c3b7466b6d73"/>
+				</reportElement>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{add_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

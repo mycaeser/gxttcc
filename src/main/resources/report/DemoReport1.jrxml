@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DemoReport1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="04f269f0-1c49-4564-95c0-c4a72d068732">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="title" class="java.lang.String"/>
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="age" class="java.lang.String"/>
+	<parameter name="dept" class="java.lang.String"/>
+	<parameter name="gender" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="add_name" class="java.lang.String">
+		<fieldDescription><![CDATA[地址名称]]></fieldDescription>
+	</field>
+	<field name="add_content" class="java.lang.String">
+		<fieldDescription><![CDATA[地址内容]]></fieldDescription>
+	</field>
+	<field name="add_phone_owner" class="java.lang.String">
+		<fieldDescription><![CDATA[联系人姓名]]></fieldDescription>
+	</field>
+	<field name="add_phone_number" class="java.lang.String">
+		<fieldDescription><![CDATA[电话号]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="107" splitType="Stretch">
+			<staticText>
+				<reportElement x="172" y="20" width="210" height="40" uuid="4f5221b5-0a1f-4157-be4d-309855b9d520"/>
+				<textElement textAlignment="Center">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[测试标题大标题]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="87" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="17" width="100" height="30" uuid="b7030959-fe97-4fa1-8593-ef40e3350678"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[名称]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="17" width="100" height="30" uuid="a0b08766-1821-419a-a034-2d3f9a6aee4f"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[地址]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="17" width="100" height="30" uuid="2e1f0afe-a104-4c44-962d-1da147817f95"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[联系人]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="14" width="100" height="30" uuid="abacf989-a6f6-4af4-bbf7-2629d3198824"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[电话号]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="62" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="16" width="100" height="30" uuid="d9db2d49-a330-4523-83b8-c7f48f415ad5"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{add_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="20" width="100" height="30" uuid="f8fcdccd-9397-462d-95e9-5e55d48249b4"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{add_content}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="20" width="100" height="30" uuid="6245bcee-91ed-44cf-a7cb-5c5c9e4b2f84"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{add_phone_owner}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="410" y="20" width="100" height="30" uuid="65fc44f1-1b9e-46bb-bcb0-8318298b836f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="18ede9a8-c6cb-461d-8d28-9cc89605ceed"/>
+				</reportElement>
+				<text><![CDATA[add_phone_number]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="129" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
